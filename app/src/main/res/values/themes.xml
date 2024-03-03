@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SchoolManagementSystem" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/btnsBgColor</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.SchoolManagementSystem" parent="Base.Theme.SchoolManagementSystem" />
+</resources>
