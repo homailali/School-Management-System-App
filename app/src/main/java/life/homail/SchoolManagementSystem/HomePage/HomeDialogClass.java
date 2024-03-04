@@ -28,16 +28,11 @@ public class HomeDialogClass {
         this.dialog.setContentView(R.layout.home_dialog_box_activity);
         this.dialog.setCancelable(false);
         this.initializeViews();
-        this.setHindOnEd();
         this.dgSetNameBtn.setOnClickListener(this::setNameBtnHandler);
     }
     private void initializeViews(){
         this.dgSetNameBtn=this.dialog.findViewById(R.id.dgSetNameBtn);
         this.dgCollegeNameEd=this.dialog.findViewById(R.id.dgCollegeNameEd);
-    }
-    private void setHindOnEd(){
-
-        this.dgCollegeNameEd.setHint("Enter college/school name");
     }
     private void setNameBtnHandler(View view){
         String collegeName=String.valueOf(this.dgCollegeNameEd.getText());

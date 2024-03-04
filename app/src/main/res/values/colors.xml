@@ -3,4 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="btnsBgColor">#e74c3c</color>
+    <color name="editTextStrokeColor">#666666</color>
+    <color name="handleAndTextSelectionColor">#e74c3c</color>
+    <color name="edHintColor">#8C8C8C</color>
+    <color name="mtrl_textinput_default_box_stroke_color">@color/editTextStrokeColor</color>
 </resources>

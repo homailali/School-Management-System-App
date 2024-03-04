@@ -3,6 +3,13 @@
     <style name="Base.Theme.SchoolManagementSystem" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:statusBarColor">@color/btnsBgColor</item>
         <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/white</item>
+
+
+        <item name="android:textColorHighlight">@color/handleAndTextSelectionColor</item>
+        <item name="android:textSelectHandle">@drawable/circle</item>
+        <item name="android:textSelectHandleLeft">@drawable/circle</item>
+        <item name="android:textSelectHandleRight">@drawable/circle</item>
     </style>
 
     <style name="Theme.SchoolManagementSystem" parent="Base.Theme.SchoolManagementSystem" />
