@@ -8,11 +8,11 @@ import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
 
 public class AddStdSaveStdBtnHandler implements View.OnClickListener{
     private AddStdMain addStdMain;
-    private int rollNo;
+    private long rollNo;
     private String firstName;
     private String lastname;
     private String className;
-    private String phoneNumber;
+    private String contactNumber;
     private String fullName;
     private Toast toast;
 
@@ -28,7 +28,7 @@ public class AddStdSaveStdBtnHandler implements View.OnClickListener{
 
 
     private void addDataToDb(){
-        StudentModel studentModel=new StudentModel(this.rollNo,this.fullName,this.className,this.phoneNumber);
+        StudentModel studentModel=new StudentModel(this.rollNo,this.fullName,this.className,this.contactNumber);
         SingleTon.getSingleTon().getStudentModelArrayList().add(studentModel);
         boolean bool=SingleTon.getSingleTon().getHomeMain().homeStudentsDb.addStudent(studentModel);
         if (bool) {
@@ -40,27 +40,27 @@ public class AddStdSaveStdBtnHandler implements View.OnClickListener{
 
 
     private void clearDataFromFields(){
-        this.addStdMain.addStdViews.getFirstNameEd().setText(null);
-        this.addStdMain.addStdViews.getLastNameEd().setText(null);
-        this.addStdMain.addStdViews.getRollNoEd().setText(null);
-        this.addStdMain.addStdViews.getClassEd().setText(null);
-        this.addStdMain.addStdViews.getPhoneNoEd().setText(null);
+        this.addStdMain.addStdViews.firstNameEd.setText(null);
+        this.addStdMain.addStdViews.lastNameEd.setText(null);
+        this.addStdMain.addStdViews.rollNoEd.setText(null);
+        this.addStdMain.addStdViews.classEd.setText(null);
+        this.addStdMain.addStdViews.contactNoEd.setText(null);
     }
     private boolean ifSomeDataIsNotCorrect(){
         if (
-                firstName.isBlank() || lastname.isBlank() || className.isBlank() || phoneNumber.isBlank()
-                || String.valueOf(this.addStdMain.addStdViews.getRollNoEd().getText()).isBlank()
+                firstName.isBlank() || lastname.isBlank() || className.isBlank() || contactNumber.isBlank()
+                || String.valueOf(this.addStdMain.addStdViews.rollNoEd.getText()).isBlank()
 
         ) return true;
         return false;
     }
     private void extractDataFromFields(){
         try {
-            this.firstName = String.valueOf(this.addStdMain.addStdViews.getFirstNameEd().getText());
-            this.lastname = String.valueOf(this.addStdMain.addStdViews.getLastNameEd().getText());
-            this.rollNo = Integer.parseInt(String.valueOf(this.addStdMain.addStdViews.getRollNoEd().getText()));
-            this.className = String.valueOf(this.addStdMain.addStdViews.getClassEd().getText());
-            this.phoneNumber = String.valueOf(this.addStdMain.addStdViews.getPhoneNoEd().getText());
+            this.firstName = String.valueOf(this.addStdMain.addStdViews.firstNameEd.getText());
+            this.lastname = String.valueOf(this.addStdMain.addStdViews.lastNameEd.getText());
+            this.rollNo = Long.parseLong(String.valueOf(this.addStdMain.addStdViews.rollNoEd.getText()));
+            this.className = String.valueOf(this.addStdMain.addStdViews.classEd.getText());
+            this.contactNumber = String.valueOf(this.addStdMain.addStdViews.contactNoEd.getText());
             this.fullName = firstName+" "+lastname;
         } catch (Exception ignored){}
     }

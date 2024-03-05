@@ -7,9 +7,9 @@
 
 
         <item name="android:textColorHighlight">@color/handleAndTextSelectionColor</item>
-        <item name="android:textSelectHandle">@drawable/circle</item>
-        <item name="android:textSelectHandleLeft">@drawable/circle</item>
-        <item name="android:textSelectHandleRight">@drawable/circle</item>
+        <item name="android:textSelectHandle">@drawable/cursor_handle</item>
+        <item name="android:textSelectHandleLeft">@drawable/cursor_handle</item>
+        <item name="android:textSelectHandleRight">@drawable/cursor_handle</item>
     </style>
 
     <style name="Theme.SchoolManagementSystem" parent="Base.Theme.SchoolManagementSystem" />

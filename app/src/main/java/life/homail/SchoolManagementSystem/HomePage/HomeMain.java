@@ -6,6 +6,7 @@ import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
 public class HomeMain extends AppCompatActivity {
     protected HomePageViews homePageViews;
     public HomeStudentsDb homeStudentsDb=new HomeStudentsDb(this);
+    public HomeTeachersDb homeTeachersDb=new HomeTeachersDb(this);
     protected HomeDialogClass homeDialogClass=new HomeDialogClass(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {

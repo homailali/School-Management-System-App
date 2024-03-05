@@ -6,6 +6,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import life.homail.SchoolManagementSystem.AddStudent.AddStdMain;
+import life.homail.SchoolManagementSystem.AddTeacher.AddTeacherMain;
 import life.homail.SchoolManagementSystem.R;
 public class HomePageViews {
     // fields
@@ -34,6 +35,7 @@ public class HomePageViews {
             this.changeIntent(AddStdMain.class);
         });
         this.addTeacherBtn.setOnClickListener(e->{
+            this.changeIntent(AddTeacherMain.class);
         });
         this.viewStudentsBtn.setOnClickListener(e->{
         });
