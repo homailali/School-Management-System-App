@@ -17,7 +17,7 @@
         app:boxStrokeWidth="2dp"
         android:hint="Enter college/school name"
         app:boxStrokeColor="@color/editTextStrokeColor"
-        app:cursorColor="@color/editTextStrokeColor"
+        app:cursorColor="@color/handleAndTextSelectionColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

@@ -13,14 +13,17 @@
         android:theme="@style/Theme.SchoolManagementSystem"
         tools:targetApi="31">
         <activity
-            android:name=".HomePage.HomeMain"
-            android:exported="true">
+            android:name=".SplashScreen.SplashScreenMain"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".HomePage.HomeMain"/>
         <activity android:name=".AddStudent.AddStdMain"/>
         <activity android:name=".AddTeacher.AddTeacherMain"/>
         <meta-data

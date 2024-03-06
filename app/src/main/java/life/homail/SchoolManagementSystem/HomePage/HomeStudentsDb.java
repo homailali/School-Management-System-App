@@ -72,14 +72,14 @@ public class HomeStudentsDb extends SQLiteOpenHelper{
         sqLiteDatabase.close();
         return temp!=0;
     }
-    protected boolean updateStudentData(StudentModel studentModel){
+    protected boolean updateStudentData(StudentModel oldModel,StudentModel newModel){
         SQLiteDatabase sqLiteDatabase=super.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
-        contentValues.put(ROLL_NO_COL,studentModel.getRollNumber());
-        contentValues.put(NAME_COL,studentModel.getName());
-        contentValues.put(CLASS_NAME_COL,studentModel.getClassName());
-        contentValues.put(CONTACT_NUMBER_COL,studentModel.getContactNumber());
-        int temp=sqLiteDatabase.update(TABLE_NAME,contentValues,ROLL_NO_COL+"=?",new String[]{String.valueOf(studentModel.getRollNumber())});
+        contentValues.put(ROLL_NO_COL,newModel.getRollNumber());
+        contentValues.put(NAME_COL,newModel.getName());
+        contentValues.put(CLASS_NAME_COL,newModel.getClassName());
+        contentValues.put(CONTACT_NUMBER_COL,newModel.getContactNumber());
+        int temp=sqLiteDatabase.update(TABLE_NAME,contentValues,ROLL_NO_COL+"=?",new String[]{String.valueOf(oldModel.getRollNumber())});
         sqLiteDatabase.close();
         return temp!=0;
     }

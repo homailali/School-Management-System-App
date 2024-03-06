@@ -29,13 +29,11 @@ public class AddStdSaveStdBtnHandler implements View.OnClickListener{
 
     private void addDataToDb(){
         StudentModel studentModel=new StudentModel(this.rollNo,this.fullName,this.className,this.contactNumber);
-        SingleTon.getSingleTon().getStudentModelArrayList().add(studentModel);
         boolean bool=SingleTon.getSingleTon().getHomeMain().homeStudentsDb.addStudent(studentModel);
         if (bool) {
             this.clearDataFromFields();
             this.makeToast("Student saved successfully");
-        }
-        else this.onError("Could not save student");
+        } else this.onError("Could not save student");
     }
 
 

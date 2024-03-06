@@ -66,7 +66,25 @@ public class HomeTeachersDb extends SQLiteOpenHelper {
                 tempArrList.add(teacherModel);
             } while (cursor.moveToNext());
         }
+        cursor.close();
         sqLiteDatabase.close();
         return tempArrList;
+    }
+    public boolean deleteTeacher(TeacherModel teacherModel){
+        SQLiteDatabase sqLiteDatabase=super.getWritableDatabase();
+        long temp=sqLiteDatabase.delete(TABLE_NAME,TEACHER_ID_COLUMN,new String[]{String.valueOf(teacherModel.getTeacherId())});
+        sqLiteDatabase.close();
+        return temp!=0;
+    }
+    public boolean updateTeacherData(TeacherModel oldModel,TeacherModel newModel){
+        SQLiteDatabase sqLiteDatabase=super.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put(TEACHER_NAME_COLUMN,newModel.getTeacherName());
+        contentValues.put(TEACHER_ID_COLUMN,newModel.getTeacherId());
+        contentValues.put(TEACHER_SUBJECT_COLUMN,newModel.getTeacherSubject());
+        contentValues.put(TEACHER_PHONE_NUMBER_COLUMN,newModel.getTeacherPhoneNumber());
+        long temp=sqLiteDatabase.update(TABLE_NAME,contentValues,TEACHER_ID_COLUMN+"=?",new String[]{String.valueOf(oldModel.getTeacherId())});
+        sqLiteDatabase.close();
+        return temp!=0;
     }
 }

@@ -23,12 +23,11 @@ public class AddTeacSaveTeacBtnHandler implements View.OnClickListener{
     }
     private void addDataToDb(){
         TeacherModel teacherModel=new TeacherModel(this.teacherFullName,this.teacherId,this.teacherSubject,this.teacherPhoneNumber);
-        SingleTon.getSingleTon().getTeacherModelArrayList().add(teacherModel);
         boolean bool=SingleTon.getSingleTon().getHomeMain().homeTeachersDb.addTeacher(teacherModel);
         if (bool){
             this.makeEveryEdEmpty();
-            this.makeToast("Teacher added successfully");
-        } else  this.makeToast("Error adding teacher");
+            this.makeToast("Teacher saved successfully");
+        } else this.makeToast("Could not save teacher");
     }
     private void makeEveryEdEmpty(){
         this.addTeacherMain.addTeacherViews.firstNameEd.setText(null);

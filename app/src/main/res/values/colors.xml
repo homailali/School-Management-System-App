@@ -4,11 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="btnsBgColor">#e74c3c</color>
     <color name="editTextStrokeColor">#808080</color>
+    <color name="backgroundColor">#e74c3c</color>
     <color name="handleAndTextSelectionColor">#F47F6E</color>
     <color name="edHintColor">#808080</color>
-
-
-
-
     <color name="mtrl_textinput_default_box_stroke_color">@color/editTextStrokeColor</color>
 </resources>
