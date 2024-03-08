@@ -24,6 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomePage.HomeMain"/>
+        <activity android:name=".InstitutionInfo.InstitutionInfoMain"/>
         <activity android:name=".AddStudent.AddStdMain"/>
         <activity android:name=".AddTeacher.AddTeacherMain"/>
         <meta-data

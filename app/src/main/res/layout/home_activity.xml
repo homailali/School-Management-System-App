@@ -4,101 +4,166 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/collegeNameTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/baloo_bhai_2_bold"
-            android:text="College name"
-            android:textSize="40sp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="400dp"
+            android:backgroundTint="@color/darkBackgroundColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
+            <TextView
+                android:id="@+id/collegeNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/darkBackgroundColor"
+                android:fontFamily="@font/baloo_bhai_2_bold"
+                android:text="College name"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingsBtn"
+                app:layout_constraintEnd_toStartOf="@+id/settingsBtn"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/circle_bg"
+                android:padding="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/school_icon" />
+
+            <Button
+                android:id="@+id/settingsBtn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/darkBackgroundColor"
+                android:drawableTop="@drawable/settings_drawable"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:paddingTop="9dp"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:rippleColor="@color/btnHoverColor" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:fontFamily="@font/baloo_bhai_2_medium"
-            android:gravity="center"
-            android:lineSpacingExtra="-10dp"
-            android:text="@string/app_description"
-            android:textSize="20sp"
+            android:layout_marginTop="500dp"
+            android:background="@drawable/all_rounded_bg"
+            android:padding="16dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/collegeNameTv" />
+            app:layout_constraintTop_toTopOf="parent">
+            <Button
+                android:id="@+id/addStudentBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/btnsBgColor"
+                android:drawableEnd="@drawable/navigate_next"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:text="Add student"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:cornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:rippleColor="@color/btnHoverColor" />
+            <Button
+                android:id="@+id/addTeacherBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/btnsBgColor"
+                android:drawableEnd="@drawable/navigate_next"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:text="Add Teacher"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:cornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addStudentBtn"
+                app:rippleColor="@color/btnHoverColor" />
+            <Button
+                android:id="@+id/viewStudentsBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/btnsBgColor"
+                android:drawableEnd="@drawable/navigate_next"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:text="View students"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:cornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addTeacherBtn"
+                app:rippleColor="@color/btnHoverColor" />
+            <Button
+                android:id="@+id/viewTeachersBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/btnsBgColor"
+                android:drawableEnd="@drawable/navigate_next"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:text="View teachers"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:cornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewStudentsBtn"
+                app:rippleColor="@color/btnHoverColor" />
+            <Button
+                android:id="@+id/searchStdBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/btnsBgColor"
+                android:drawableEnd="@drawable/navigate_next"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:text="Search student"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:cornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewTeachersBtn"
+                app:rippleColor="@color/btnHoverColor" />
+            <Button
+                android:id="@+id/searchTeacherBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/btnsBgColor"
+                android:drawableEnd="@drawable/navigate_next"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:text="Search teacher"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:cornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchStdBtn"
+                app:rippleColor="@color/btnHoverColor" />
 
-        <Button
-            android:textColor="@color/white"
-            android:id="@+id/addStudentBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="@color/btnsBgColor"
-            android:drawableEnd="@drawable/person_add"
-            android:fontFamily="@font/baloo_bhai_2_medium"
-            android:text="Add student"
-            android:textSize="25sp"
-            app:cornerRadius="5dp"
-            app:rippleColor="#20FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-        <Button
-            android:textColor="@color/white"
-            android:id="@+id/addTeacherBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/baloo_bhai_2_medium"
-            android:text="Add Teacher"
-            android:backgroundTint="@color/btnsBgColor"
-            android:textSize="25sp"
-            android:drawableEnd="@drawable/person_add"
-            app:cornerRadius="5dp"
-            app:rippleColor="#20FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addStudentBtn" />
-
-        <Button
-            android:textColor="@color/white"
-            android:id="@+id/viewStudentsBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/btnsBgColor"
-            android:drawableEnd="@drawable/eye_drawable"
-            android:fontFamily="@font/baloo_bhai_2_medium"
-            android:text="View students"
-            android:textSize="25sp"
-            app:cornerRadius="5dp"
-            app:rippleColor="#20FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addTeacherBtn" />
-
-        <Button
-            android:textColor="@color/white"
-            android:id="@+id/viewTeachersBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/btnsBgColor"
-            android:drawableEnd="@drawable/eye_drawable"
-            android:fontFamily="@font/baloo_bhai_2_medium"
-            android:text="View teachers"
-            android:textSize="25sp"
-            app:cornerRadius="5dp"
-            app:rippleColor="#20FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewStudentsBtn" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

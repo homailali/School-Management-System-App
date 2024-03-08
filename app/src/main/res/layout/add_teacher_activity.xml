@@ -30,7 +30,8 @@
             app:layout_constraintEnd_toStartOf="@+id/teacherDataFormTv"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/teacherDataFormTv"
-            app:rippleColor="#20FFFFFF" />
+            app:rippleColor="@color/btnHoverColor"
+ />
 
         <TextView
             android:id="@+id/teacherDataFormTv"
@@ -194,13 +195,13 @@
                 android:id="@+id/saveTeacherBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/btnsBgColor"
                 android:fontFamily="@font/baloo_bhai_2_medium"
                 android:text="Save teacher"
                 android:textSize="30sp"
                 app:cornerRadius="5dp"
-                app:rippleColor="#20FFFFFF"
+                app:rippleColor="@color/btnHoverColor"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -12,15 +12,11 @@ public class AddStdMain extends AppCompatActivity{
     public void onCreate(Bundle getCodeFromParent){
         super.onCreate(getCodeFromParent);
         super.setContentView(R.layout.add_std_activity);
-        this.changeStatusBarColor();
         this.addStdViewsClassSettings();
     }
 
     private void addStdViewsClassSettings(){
         this.addStdViews=new AddStdViews(this);
     }
-    private void changeStatusBarColor(){
-        Window window=getWindow();
-        window.setStatusBarColor(Color.parseColor("#e74c3c"));
-    }
+
 }
