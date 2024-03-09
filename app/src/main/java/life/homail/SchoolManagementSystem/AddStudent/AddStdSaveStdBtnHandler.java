@@ -44,7 +44,7 @@ public class AddStdSaveStdBtnHandler implements View.OnClickListener{
         this.addStdMain.addStdViews.classEd.setText(null);
         this.addStdMain.addStdViews.contactNoEd.setText(null);
     }
-    private boolean ifSomeDataIsNotCorrect(){
+    protected boolean ifSomeDataIsNotCorrect(){
         if (
                 firstName.isBlank() || lastname.isBlank() || className.isBlank() || contactNumber.isBlank()
                 || String.valueOf(this.addStdMain.addStdViews.rollNoEd.getText()).isBlank()
@@ -52,7 +52,7 @@ public class AddStdSaveStdBtnHandler implements View.OnClickListener{
         ) return true;
         return false;
     }
-    private void extractDataFromFields(){
+    protected void extractDataFromFields(){
         try {
             this.firstName = String.valueOf(this.addStdMain.addStdViews.firstNameEd.getText());
             this.lastname = String.valueOf(this.addStdMain.addStdViews.lastNameEd.getText());
@@ -66,7 +66,7 @@ public class AddStdSaveStdBtnHandler implements View.OnClickListener{
 
         this.makeToast(toastText);
     }
-    private void makeToast(String toastText){
+    protected void makeToast(String toastText){
         if (toast!=null) toast.cancel();
         toast=Toast.makeText(this.addStdMain,toastText,Toast.LENGTH_SHORT);
         toast.show();

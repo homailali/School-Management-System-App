@@ -53,7 +53,7 @@ public class AddTeacSaveTeacBtnHandler implements View.OnClickListener{
             this.teacherFullName=this.teacherFirstName+" "+this.teacherLastName;
         } catch (Exception exception){}
     }
-    private void makeToast(String toastText){
+    protected void makeToast(String toastText){
         if (toast!=null) toast.cancel();
         toast=Toast.makeText(this.addTeacherMain,toastText,Toast.LENGTH_SHORT);
         toast.show();

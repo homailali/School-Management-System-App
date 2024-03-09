@@ -71,7 +71,7 @@ public class SubmitInfoBtnHandler implements View.OnClickListener{
         this.schoolLocation=String.valueOf(this.institutionInfoMain.institutionLocationEd.getText());
         this.contactNumber=String.valueOf(this.institutionInfoMain.contactNumberEd.getText());
     }
-    private void makeToast(String toastText){
+    protected void makeToast(String toastText){
         if (toast!=null) toast.cancel();
         toast=Toast.makeText(this.institutionInfoMain,toastText,Toast.LENGTH_SHORT);
         toast.show();

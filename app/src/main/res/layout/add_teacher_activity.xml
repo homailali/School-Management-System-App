@@ -1,16 +1,17 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintlayout"
+        android:id="@+id/constraintlayout1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingTop="5dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:paddingBottom="10dp"
-        android:background="@color/btnsBgColor"
+        android:background="@color/darkBackgroundColor"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,14 +26,12 @@
             android:paddingTop="0dp"
             android:paddingEnd="15dp"
             android:paddingBottom="0dp"
-            android:backgroundTint="@color/btnsBgColor"
+            android:backgroundTint="@color/darkBackgroundColor"
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toStartOf="@+id/teacherDataFormTv"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/teacherDataFormTv"
-            app:rippleColor="@color/btnHoverColor"
- />
-
+            app:rippleColor="@color/btnHoverColor" />
         <TextView
             android:id="@+id/teacherDataFormTv"
             android:layout_width="wrap_content"
@@ -41,7 +40,7 @@
             android:fontFamily="@font/baloo_bhai_2_semibold"
             android:gravity="center"
             android:lineSpacingExtra="-20dp"
-            android:background="@color/btnsBgColor"
+            android:background="@color/darkBackgroundColor"
             android:text="Teacher data form"
             android:textColor="@color/white"
             android:textSize="30dp"
@@ -52,160 +51,169 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintlayout">
+        app:layout_constraintTop_toBottomOf="@+id/constraintlayout1"
+        app:layout_constraintVertical_bias="1.0">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:backgroundTint="@color/white"
+            android:padding="15dp">
+
             <TextView
                 android:id="@+id/teacherNameTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/white"
                 android:fontFamily="@font/baloo_bhai_2_medium"
                 android:text="Teacher name"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/firstNameLayout"
+                app:layout_constraintStart_toStartOf="@+id/firstNameEd"
                 app:layout_constraintTop_toTopOf="parent" />
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/firstNameLayout"
+            <EditText
+                android:id="@+id/firstNameEd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
-                app:boxStrokeWidth="2dp"
-                app:boxStrokeColor="@color/editTextStrokeColor"
-                app:cursorColor="@color/handleAndTextSelectionColor"
+                android:background="@drawable/edit_text_bg"
+                android:hint="First name"
+                android:inputType="text"
+                android:padding="15dp"
+                android:textColor="@color/black"
                 android:textColorHint="@color/edHintColor"
-                app:hintTextColor="@color/edHintColor"
-                app:layout_constraintEnd_toStartOf="@id/lastNameLayout"
+                android:textCursorDrawable="@drawable/edit_text_cursor"
+                app:layout_constraintEnd_toStartOf="@id/lastNameEd"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/teacherNameTv">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/firstNameEd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="First name"
-                    android:inputType="textNoSuggestions" />
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/lastNameLayout"
+                app:layout_constraintTop_toBottomOf="@+id/teacherNameTv" />
+            <EditText
+                android:id="@+id/lastNameEd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                app:boxStrokeWidth="2dp"
-                app:boxStrokeColor="@color/editTextStrokeColor"
-                app:cursorColor="@color/handleAndTextSelectionColor"
+                android:background="@drawable/edit_text_bg"
+                android:hint="Last name"
+                android:inputType="text"
+                android:padding="15dp"
+                android:textColor="@color/black"
                 android:textColorHint="@color/edHintColor"
-                app:hintTextColor="@color/edHintColor"
+                android:textCursorDrawable="@drawable/edit_text_cursor"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/firstNameLayout"
-                app:layout_constraintTop_toBottomOf="@+id/teacherNameTv">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/lastNameEd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Last name"
-                    android:inputType="textNoSuggestions" />
-            </com.google.android.material.textfield.TextInputLayout>
+                app:layout_constraintStart_toEndOf="@+id/firstNameEd"
+                app:layout_constraintTop_toTopOf="@+id/firstNameEd" />
+
             <TextView
                 android:id="@+id/teacherIdAndSubjectTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/white"
                 android:fontFamily="@font/baloo_bhai_2_medium"
                 android:text="Teacher id and subject"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/teacherIdLayout"
-                app:layout_constraintTop_toBottomOf="@+id/firstNameLayout" />
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/teacherIdLayout"
+                app:layout_constraintStart_toStartOf="@+id/teacherIdEd"
+                app:layout_constraintTop_toBottomOf="@+id/firstNameEd" />
+            <EditText
+                android:id="@+id/teacherIdEd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
-                app:boxStrokeWidth="2dp"
-                app:boxStrokeColor="@color/editTextStrokeColor"
-                app:cursorColor="@color/handleAndTextSelectionColor"
+                android:background="@drawable/edit_text_bg"
+                android:hint="Teacher id"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textColor="@color/black"
                 android:textColorHint="@color/edHintColor"
-                app:hintTextColor="@color/edHintColor"
-                app:layout_constraintEnd_toStartOf="@id/subjectNameInputLayout"
+                android:textCursorDrawable="@drawable/edit_text_cursor"
+                app:layout_constraintEnd_toStartOf="@id/subjectNameEd"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/teacherIdAndSubjectTv">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/teacherIdEd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Teacher id"
-                    android:inputType="number" />
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/subjectNameInputLayout"
+                app:layout_constraintTop_toBottomOf="@+id/teacherIdAndSubjectTv" />
+            <EditText
+                android:id="@+id/subjectNameEd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                app:boxStrokeWidth="2dp"
-                app:boxStrokeColor="@color/editTextStrokeColor"
-                app:cursorColor="@color/handleAndTextSelectionColor"
+                android:background="@drawable/edit_text_bg"
+                android:hint="Subject name"
+                android:inputType="text"
+                android:padding="15dp"
+                android:textColor="@color/black"
                 android:textColorHint="@color/edHintColor"
-                app:hintTextColor="@color/edHintColor"
+                android:textCursorDrawable="@drawable/edit_text_cursor"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/teacherIdLayout"
-                app:layout_constraintTop_toBottomOf="@+id/teacherIdAndSubjectTv">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/subjectNameEd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Subject name"
-                    android:inputType="textNoSuggestions" />
-            </com.google.android.material.textfield.TextInputLayout>
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/teacherIdEd"
+                app:layout_constraintTop_toTopOf="@+id/teacherIdEd" />
 
             <TextView
                 android:id="@+id/phoneNumberTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/white"
                 android:fontFamily="@font/baloo_bhai_2_medium"
                 android:text="Phone number"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/phoneNumberLayout"
-                app:layout_constraintTop_toBottomOf="@+id/teacherIdLayout" />
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/phoneNumberLayout"
+                app:layout_constraintStart_toStartOf="@+id/phoneNumberEd"
+                app:layout_constraintTop_toBottomOf="@+id/teacherIdEd" />
+
+
+            <EditText
+                android:id="@+id/phoneNumberEd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:boxStrokeWidth="2dp"
-                app:boxStrokeColor="@color/editTextStrokeColor"
-                app:cursorColor="@color/handleAndTextSelectionColor"
+                android:inputType="number"
+                android:background="@drawable/edit_text_bg"
+                android:padding="15dp"
+                android:hint="Phone number"
                 android:textColorHint="@color/edHintColor"
-                app:hintTextColor="@color/edHintColor"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@drawable/edit_text_cursor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/phoneNumberTv">
+                app:layout_constraintTop_toBottomOf="@+id/phoneNumberTv" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/phoneNumberEd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Phone number"
-                    android:inputType="number" />
-            </com.google.android.material.textfield.TextInputLayout>
+
             <Button
-                android:id="@+id/saveTeacherBtn"
+                android:id="@+id/saveStudentBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/btnsBgColor"
+                android:layout_marginStart="5dp"
+                android:backgroundTint="@color/btnBgColor2"
                 android:fontFamily="@font/baloo_bhai_2_medium"
-                android:text="Save teacher"
+                android:lineSpacingExtra="-20dp"
+                android:text="Save"
+                android:textColor="@color/white"
                 android:textSize="30sp"
                 app:cornerRadius="5dp"
-                app:rippleColor="@color/btnHoverColor"
-                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/resetBtn"
+                app:layout_constraintTop_toTopOf="@+id/resetBtn"
+                app:rippleColor="@color/btnHoverColor" />
+
+            <Button
+                android:id="@+id/resetBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/btnBgColor1"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:text="Reset"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:cornerRadius="5dp"
+                app:layout_constraintEnd_toStartOf="@+id/saveStudentBtn"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/phoneNumberLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/phoneNumberEd"
+                app:rippleColor="@color/btnHoverColor" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
