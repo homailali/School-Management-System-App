@@ -4,10 +4,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import life.homail.SchoolManagementSystem.AddStudent.AddStdMain;
 import life.homail.SchoolManagementSystem.AddTeacher.AddTeacherMain;
 import life.homail.SchoolManagementSystem.R;
+import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
+
 public class HomePageViews {
     // fields
     private HomeMain homeMain;
@@ -15,7 +18,8 @@ public class HomePageViews {
     protected Button addTeacherBtn;
     protected Button viewStudentsBtn;
     protected Button viewTeachersBtn;
-    protected TextView collegeNameTv;
+    protected TextView totalTeacherNumberTv;
+    protected TextView totalStudentNumberTv;
     // constructor
     public HomePageViews(HomeMain homeMain) {
         this.homeMain = homeMain;
@@ -24,11 +28,12 @@ public class HomePageViews {
     }
     // methods
     private void initializeViews(){
-        this.collegeNameTv=this.homeMain.findViewById(R.id.collegeNameTv);
         this.addStudentBtn=this.homeMain.findViewById(R.id.addStudentBtn);
-        this.addTeacherBtn=this.homeMain.findViewById(R.id.addTeacherBtn);
+        this.addTeacherBtn=this.homeMain.findViewById(R.id.addTeachetBtn);
         this.viewStudentsBtn=this.homeMain.findViewById(R.id.viewStudentsBtn);
         this.viewTeachersBtn=this.homeMain.findViewById(R.id.viewTeachersBtn);
+        this.totalStudentNumberTv=this.homeMain.findViewById(R.id.totalStudentsNumberTv);
+        this.totalTeacherNumberTv=this.homeMain.findViewById(R.id.totalTeacherNumberTv);
     }
     private void handleEvents(){
         this.addStudentBtn.setOnClickListener(e->{
@@ -46,5 +51,11 @@ public class HomePageViews {
     private void changeIntent(Class<? extends AppCompatActivity> classToSwitchToo){
         Intent intent=new Intent(this.homeMain,classToSwitchToo);
         this.homeMain.startActivity(intent);
+    }
+    private void setStudentsAndTeachersCountOnTv(){
+        int stdNumber=SingleTon.getSingleTon().getStudentModelArrayList().size();
+        int teacherNumber=SingleTon.getSingleTon().getTeacherModelArrayList().size();
+        this.totalStudentNumberTv.setText(String.valueOf(stdNumber));
+        this.totalTeacherNumberTv.setText(String.valueOf(teacherNumber));
     }
 }
