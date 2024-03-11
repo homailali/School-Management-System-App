@@ -2,81 +2,203 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:backgroundTint="@color/white"
+    android:paddingStart="10dp"
     android:paddingTop="5dp"
-    android:paddingBottom="5dp"
-    >
+    android:paddingEnd="10dp"
+    android:paddingBottom="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/all_rounded_bg"
         android:backgroundTint="@color/backgroundColor1"
         android:padding="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintBottom_toBottomOf="@id/constraintLayout1"
+        app:layout_constraintEnd_toEndOf="@id/constraintLayout1"
+        app:layout_constraintStart_toStartOf="@id/constraintLayout1"
+        app:layout_constraintTop_toTopOf="@id/constraintLayout1"
+        >
 
-        <TextView
-            android:id="@+id/rollNoTv"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nameConstraintLayout"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/backgroundColor1"
-            android:fontFamily="@font/baloo_bhai_2_medium"
-            android:gravity="center"
-            android:lineSpacingExtra="-15dp"
-            android:text="Roll number:2437"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/all_rounded_bg"
+            android:padding="15dp"
+            app:layout_constraintBottom_toTopOf="@id/classConstraintLayout"
+            app:layout_constraintEnd_toStartOf="@id/rollNoConstraintLayout"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/classTv" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/nameTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/backgroundColor1"
-            android:fontFamily="@font/baloo_bhai_2_medium"
-            android:gravity="center"
-            android:lineSpacingExtra="-15dp"
-            android:text="Name:homail ali hassan"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rollNoTv" />
+            <TextView
+                android:id="@+id/nameHeadingTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_bold"
+                android:gravity="center"
+                android:lineSpacingExtra="-10dp"
+                android:text="Name"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@id/nameTv"
+                app:layout_constraintEnd_toEndOf="@id/nameConstraintLayout"
+                app:layout_constraintStart_toStartOf="@id/nameConstraintLayout"
+                app:layout_constraintTop_toTopOf="@id/nameConstraintLayout" />
 
-        <TextView
-            android:id="@+id/classTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/backgroundColor1"
-            android:fontFamily="@font/baloo_bhai_2_medium"
-            android:gravity="center"
-            android:lineSpacingExtra="-15dp"
-            android:text="Class:ICS-2"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/nameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:gravity="center"
+                android:lineSpacingExtra="-15dp"
+                android:text="homail ali hassan"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/nameConstraintLayout"
+                app:layout_constraintEnd_toEndOf="@id/nameConstraintLayout"
+                app:layout_constraintStart_toStartOf="@id/nameConstraintLayout"
+                app:layout_constraintTop_toBottomOf="@+id/nameHeadingTv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/contactNumberTv"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rollNoConstraintLayout"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/backgroundColor1"
-            android:fontFamily="@font/baloo_bhai_2_medium"
-            android:gravity="center"
-            android:lineSpacingExtra="-15dp"
-            android:text="Contact number:03105313124"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/all_rounded_bg"
+            android:padding="15dp"
+            app:layout_constraintBottom_toTopOf="@id/contactNumberConstraintLayout"
+            app:layout_constraintEnd_toEndOf="@id/constraintLayout2"
+            app:layout_constraintStart_toEndOf="@+id/nameConstraintLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/rollNoHeadingTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_bold"
+                android:gravity="center"
+                android:lineSpacingExtra="-10dp"
+                android:text="Roll number"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@id/rollNoTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rollNoTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:gravity="center"
+                android:lineSpacingExtra="-15dp"
+                android:text="2437"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/rollNoConstraintLayout"
+                app:layout_constraintStart_toStartOf="@+id/rollNoConstraintLayout"
+                app:layout_constraintTop_toBottomOf="@+id/rollNoHeadingTv" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/classConstraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/all_rounded_bg"
+            android:padding="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/contactNumberConstraintLayout"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameTv" />
+            app:layout_constraintTop_toBottomOf="@+id/nameConstraintLayout">
+
+            <TextView
+                android:id="@+id/classHeadingTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_bold"
+                android:gravity="center"
+                android:lineSpacingExtra="-10dp"
+                android:text="Class"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@id/classTv"
+                app:layout_constraintEnd_toEndOf="@id/classConstraintLayout"
+                app:layout_constraintStart_toStartOf="@id/classConstraintLayout"
+                app:layout_constraintTop_toTopOf="@id/classConstraintLayout" />
+
+            <TextView
+                android:id="@+id/classTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:gravity="center"
+                android:lineSpacingExtra="-15dp"
+                android:text="Ics-2"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/classConstraintLayout"
+                app:layout_constraintEnd_toEndOf="@id/classConstraintLayout"
+                app:layout_constraintStart_toStartOf="@id/classConstraintLayout"
+                app:layout_constraintTop_toBottomOf="@+id/classHeadingTv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contactNumberConstraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/all_rounded_bg"
+            android:padding="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/classConstraintLayout"
+            app:layout_constraintTop_toBottomOf="@+id/rollNoConstraintLayout">
+
+            <TextView
+                android:id="@+id/contactNumberHeadingTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_bold"
+                android:gravity="center"
+                android:lineSpacingExtra="-10dp"
+                android:text="Contact number"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toTopOf="@id/contactNumberTv"
+                app:layout_constraintEnd_toEndOf="@id/contactNumberConstraintLayout"
+                app:layout_constraintStart_toStartOf="@id/contactNumberConstraintLayout"
+                app:layout_constraintTop_toTopOf="@id/contactNumberConstraintLayout" />
+
+            <TextView
+                android:id="@+id/contactNumberTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:gravity="center"
+                android:lineSpacingExtra="-15dp"
+                android:text="03105313124"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/contactNumberConstraintLayout"
+                app:layout_constraintEnd_toEndOf="@id/contactNumberConstraintLayout"
+                app:layout_constraintStart_toStartOf="@id/contactNumberConstraintLayout"
+                app:layout_constraintTop_toBottomOf="@+id/contactNumberHeadingTv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -4,6 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import life.homail.SchoolManagementSystem.R;
@@ -22,11 +23,30 @@ public class ViewStdAdapter extends RecyclerView.Adapter<MyViewHolder>{
     }
     @Override
     public void onBindViewHolder(MyViewHolder myViewHolder,int position){
-        myViewHolder.classTv.setText("Class:"+SingleTon.getSingleTon().getStudentModelArrayList().get(position).getClassName());
-        myViewHolder.rollNoTv.setText("Roll no:"+SingleTon.getSingleTon().getStudentModelArrayList().get(position).getRollNumber());
-        myViewHolder.nameTv.setText("Name:"+SingleTon.getSingleTon().getStudentModelArrayList().get(position).getName());
-        myViewHolder.contactNumberTv.setText("Contact:"+SingleTon.getSingleTon().getStudentModelArrayList().get(position).getContactNumber());
+        this.getAndSetValueOfLayoutsHeight(myViewHolder);
+        myViewHolder.classTv.setText(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getClassName());
+        myViewHolder.rollNoTv.setText(String.valueOf(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getRollNumber()));
+        myViewHolder.nameTv.setText(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getName());
+        myViewHolder.contactNumberTv.setText(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getContactNumber());
     }
+
+    private void getAndSetValueOfLayoutsHeight(MyViewHolder myViewHolder){
+        int maxHeight;
+        int nameLayoutHeight=myViewHolder.nameConstraintLayout.getHeight();
+        int rollNoLayoutHeight=myViewHolder.rollNoConstraintLayout.getHeight();
+        int classLayoutHeight=myViewHolder.classConstraintLayout.getHeight();
+        int contactNumberLayoutHeight=myViewHolder.contactNumberConstraintLayout.getHeight();
+        maxHeight = Math.max(Math.max(nameLayoutHeight,rollNoLayoutHeight),Math.max(classLayoutHeight,contactNumberLayoutHeight));
+
+        myViewHolder.nameConstraintLayout.setMinHeight(maxHeight);
+        myViewHolder.rollNoConstraintLayout.setMinHeight(maxHeight);
+        myViewHolder.classConstraintLayout.setMinHeight(maxHeight);
+        myViewHolder.contactNumberConstraintLayout.setMinHeight(maxHeight);
+
+
+
+    }
+
     @Override
     public int getItemCount(){
         return SingleTon.getSingleTon().getStudentModelArrayList().size();
@@ -38,11 +58,21 @@ class MyViewHolder extends RecyclerView.ViewHolder{
     protected TextView rollNoTv;
     protected TextView nameTv;
     protected TextView contactNumberTv;
+
+    protected ConstraintLayout nameConstraintLayout;
+    protected ConstraintLayout rollNoConstraintLayout;
+    protected ConstraintLayout classConstraintLayout;
+    protected ConstraintLayout contactNumberConstraintLayout;
     public MyViewHolder(View itemView){
         super(itemView);
         this.classTv=itemView.findViewById(R.id.classTv);
         this.rollNoTv=itemView.findViewById(R.id.rollNoTv);
         this.nameTv=itemView.findViewById(R.id.nameTv);
         this.contactNumberTv=itemView.findViewById(R.id.contactNumberTv);
+
+        this.nameConstraintLayout=itemView.findViewById(R.id.nameConstraintLayout);
+        this.rollNoConstraintLayout=itemView.findViewById(R.id.rollNoConstraintLayout);
+        this.classConstraintLayout=itemView.findViewById(R.id.classConstraintLayout);
+        this.contactNumberConstraintLayout=itemView.findViewById(R.id.contactNumberConstraintLayout);
     }
 }
