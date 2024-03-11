@@ -5,6 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import life.homail.SchoolManagementSystem.ModelClasses.StudentModel;
+import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
+
 public class HomeStudentsDb extends SQLiteOpenHelper{
     // fields
     private HomeMain homeMain;

@@ -4,12 +4,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import life.homail.SchoolManagementSystem.AddStudent.AddStdMain;
 import life.homail.SchoolManagementSystem.AddTeacher.AddTeacherMain;
 import life.homail.SchoolManagementSystem.R;
 import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
+import life.homail.SchoolManagementSystem.ViewStudents.ViewStudentMain;
+import life.homail.SchoolManagementSystem.ViewTeachers.ViewTeachersMain;
 
 public class HomePageViews {
     // fields
@@ -43,8 +44,10 @@ public class HomePageViews {
             this.changeIntent(AddTeacherMain.class);
         });
         this.viewStudentsBtn.setOnClickListener(e->{
+            this.changeIntent(ViewStudentMain.class);
         });
         this.viewTeachersBtn.setOnClickListener(e->{
+            this.changeIntent(ViewTeachersMain.class);
         });
     }
 
@@ -52,7 +55,7 @@ public class HomePageViews {
         Intent intent=new Intent(this.homeMain,classToSwitchToo);
         this.homeMain.startActivity(intent);
     }
-    private void setStudentsAndTeachersCountOnTv(){
+    protected void setStudentsAndTeachersCountOnTv(){
         int stdNumber=SingleTon.getSingleTon().getStudentModelArrayList().size();
         int teacherNumber=SingleTon.getSingleTon().getTeacherModelArrayList().size();
         this.totalStudentNumberTv.setText(String.valueOf(stdNumber));

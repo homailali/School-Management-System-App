@@ -2,6 +2,8 @@ package life.homail.SchoolManagementSystem.HomePage;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+
 import java.util.ArrayList;
 import life.homail.SchoolManagementSystem.ModelClasses.HomeAdpModel;
 import life.homail.SchoolManagementSystem.R;
@@ -46,4 +48,12 @@ public class HomeMain extends AppCompatActivity {
         institutionLocation = sharedPreferences.getString(SplashScreenMain.INSTITUTION_LOCATION_KEY, "null");
         contactNumber = sharedPreferences.getString(SplashScreenMain.CONTACT_NUMBER_KEY, "null");
     }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        this.homePageViews.setStudentsAndTeachersCountOnTv();
+    }
+
+
 }
