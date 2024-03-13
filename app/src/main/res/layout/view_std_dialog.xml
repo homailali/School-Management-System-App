@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/studentNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/baloo_bhai_2_medium"
+            android:text="Student name"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@+id/fisrtNameEd"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/fisrtNameEd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="First name"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textColorHint="@color/edHintColor"
+            android:textCursorDrawable="@drawable/edit_text_cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/studentNameTv" />
+
+        <EditText
+            android:id="@+id/lastNameEd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="Last name"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textColorHint="@color/edHintColor"
+            android:textCursorDrawable="@drawable/edit_text_cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fisrtNameEd" />
+
+        <TextView
+            android:id="@+id/rollNoAndClassTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/baloo_bhai_2_medium"
+            android:text="Roll no and class"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@+id/rollNoEd"
+            app:layout_constraintTop_toBottomOf="@+id/lastNameEd" />
+
+        <EditText
+            android:id="@+id/rollNoEd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="Roll number"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textColorHint="@color/edHintColor"
+            android:textCursorDrawable="@drawable/edit_text_cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rollNoAndClassTv" />
+
+        <EditText
+            android:id="@+id/classNameEd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="Class name"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textColorHint="@color/edHintColor"
+            android:textCursorDrawable="@drawable/edit_text_cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rollNoEd" />
+
+
+        <TextView
+            android:id="@+id/contactNumberTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/baloo_bhai_2_medium"
+            android:text="Contact number"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="@+id/rollNoEd"
+            app:layout_constraintTop_toBottomOf="@+id/classNameEd" />
+
+        <EditText
+            android:id="@+id/contactNumberEd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="Contact number"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textColorHint="@color/edHintColor"
+            android:textCursorDrawable="@drawable/edit_text_cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactNumberTv" />
+
+        <Button
+            android:id="@+id/cancelBtn"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:backgroundTint="@color/backgroundColor1"
+            android:fontFamily="@font/baloo_bhai_2_medium"
+            android:text="Cancel"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            app:cornerRadius="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/saveBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactNumberEd"
+            app:rippleColor="@color/btnHoverColor" />
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/backgroundColor1"
+            android:fontFamily="@font/baloo_bhai_2_medium"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            app:cornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cancelBtn"
+            app:layout_constraintTop_toBottomOf="@+id/contactNumberEd"
+            app:rippleColor="@color/btnHoverColor" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

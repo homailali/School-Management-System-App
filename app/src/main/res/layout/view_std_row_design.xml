@@ -17,7 +17,10 @@
         android:layout_height="wrap_content"
         android:background="@drawable/all_rounded_bg"
         android:backgroundTint="@color/backgroundColor1"
-        android:padding="15dp"
+        android:paddingBottom="15dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:paddingTop="5dp"
         app:layout_constraintBottom_toBottomOf="@id/constraintLayout1"
         app:layout_constraintEnd_toEndOf="@id/constraintLayout1"
         app:layout_constraintStart_toStartOf="@id/constraintLayout1"
@@ -28,13 +31,14 @@
             android:id="@+id/nameConstraintLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:background="@drawable/all_rounded_bg"
             android:padding="15dp"
             app:layout_constraintBottom_toTopOf="@id/classConstraintLayout"
             app:layout_constraintEnd_toStartOf="@id/rollNoConstraintLayout"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/editBtn">
 
             <TextView
                 android:id="@+id/nameHeadingTv"
@@ -57,11 +61,12 @@
                 android:fontFamily="@font/baloo_bhai_2_medium"
                 android:gravity="center"
                 android:lineSpacingExtra="-15dp"
-                android:text="homail ali hassan"
+                android:text="homail ali"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@id/nameConstraintLayout"
                 app:layout_constraintEnd_toEndOf="@id/nameConstraintLayout"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@id/nameConstraintLayout"
                 app:layout_constraintTop_toBottomOf="@+id/nameHeadingTv" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -71,12 +76,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/all_rounded_bg"
             android:padding="15dp"
             app:layout_constraintBottom_toTopOf="@id/contactNumberConstraintLayout"
             app:layout_constraintEnd_toEndOf="@id/constraintLayout2"
             app:layout_constraintStart_toEndOf="@+id/nameConstraintLayout"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/deleteBtn">
 
             <TextView
                 android:id="@+id/rollNoHeadingTv"
@@ -197,6 +203,44 @@
                 app:layout_constraintStart_toStartOf="@id/contactNumberConstraintLayout"
                 app:layout_constraintTop_toBottomOf="@+id/contactNumberHeadingTv" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/editBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:drawableTop="@drawable/edit_drawable"
+            android:paddingTop="9dp"
+            android:backgroundTint="@color/backgroundColor1"
+            app:cornerRadius="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@color/btnHoverColor" />
+
+        <Button
+            android:id="@+id/deleteBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/backgroundColor1"
+            android:drawableTop="@drawable/delete_drawable"
+            android:paddingTop="9dp"
+            app:cornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@color/btnHoverColor" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/backgroundColor1"
+            android:fontFamily="@font/baloo_bhai_2_medium"
+            android:text="Edit/Delete"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/deleteBtn"
+            app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
+            app:layout_constraintStart_toEndOf="@+id/editBtn"
+            app:layout_constraintTop_toTopOf="@+id/editBtn" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

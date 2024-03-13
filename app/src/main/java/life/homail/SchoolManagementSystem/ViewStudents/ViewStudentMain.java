@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import life.homail.SchoolManagementSystem.R;
 
 public class ViewStudentMain extends AppCompatActivity{
-    private RecyclerView viewStdRcView;
-    private ViewStdAdapter viewStdAdapter=new ViewStdAdapter(this);
+    protected RecyclerView viewStdRcView;
+    protected ViewStdDialogClass viewStdDialogClass;
+    protected ViewStdAdapter viewStdAdapter=new ViewStdAdapter(this);
+    protected ViewStdEditBtnHandler viewStdEditBtnHandler=new ViewStdEditBtnHandler(this);
+    protected ViewStdDeleteBtnHandler viewStdDeleteBtnHandler = new ViewStdDeleteBtnHandler(this);
     @Override
     public void onCreate(Bundle getCodeFromParent){
         super.onCreate(getCodeFromParent);
@@ -17,6 +20,10 @@ public class ViewStudentMain extends AppCompatActivity{
     }
 
     private void atEndOfOnCreate(){
+        this.viewStdDialogClass=new ViewStdDialogClass(this);
+        this.rcViewAndAdapterSettings();
+    }
+    private void rcViewAndAdapterSettings(){
         this.viewStdRcView=super.findViewById(R.id.viewStdRcView);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
