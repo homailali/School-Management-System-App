@@ -25,11 +25,11 @@ public class AddStdViews {
         this.goBackBtn=this.addStdMain.findViewById(R.id.goBackBtn);
         this.saveStdBtn=this.addStdMain.findViewById(R.id.saveStudentBtn);
         // initializing edit texts
-        this.firstNameEd=this.addStdMain.findViewById(R.id.firstNameEd);
-        this.lastNameEd=this.addStdMain.findViewById(R.id.lastNameEd);
-        this.rollNoEd=this.addStdMain.findViewById(R.id.rollNoEd);
-        this.classEd=this.addStdMain.findViewById(R.id.classNameEd);
-        this.contactNoEd=this.addStdMain.findViewById(R.id.contactNumberEd);
+        this.firstNameEd=this.addStdMain.findViewById(R.id.studentFirstNameEd);
+        this.lastNameEd=this.addStdMain.findViewById(R.id.studentLastNameEd);
+        this.rollNoEd=this.addStdMain.findViewById(R.id.studentRollNoEd);
+        this.classEd=this.addStdMain.findViewById(R.id.studentClassNameEd);
+        this.contactNoEd=this.addStdMain.findViewById(R.id.studentContactNumberEd);
     }
     private void setEventHandlers(){
         this.resetBtn.setOnClickListener(this::resetBtnHandler);

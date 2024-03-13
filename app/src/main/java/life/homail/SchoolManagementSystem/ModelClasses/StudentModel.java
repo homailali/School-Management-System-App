@@ -2,15 +2,21 @@ package life.homail.SchoolManagementSystem.ModelClasses;
 
 public class StudentModel {
     private long rollNumber;
-    private String name;
+    private String firstName;
+    private String lastName;
+    private String fullName;
+
+
     private String className;
     private String contactNumber;
 
-    public StudentModel(long rollNumber, String name, String className, String contactNumber) {
+    public StudentModel(long rollNumber, String fullName,String firstName,String lastName, String className, String contactNumber) {
         this.rollNumber = rollNumber;
-        this.name = name;
+        this.fullName = fullName;
         this.className = className;
         this.contactNumber = contactNumber;
+        this.firstName=firstName;
+        this.lastName=lastName;
     }
 
     public long getRollNumber() {
@@ -21,12 +27,12 @@ public class StudentModel {
         this.rollNumber = rollNumber;
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getClassName() {
@@ -43,5 +49,21 @@ public class StudentModel {
 
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

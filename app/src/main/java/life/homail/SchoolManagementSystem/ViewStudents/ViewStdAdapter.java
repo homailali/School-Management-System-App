@@ -40,7 +40,7 @@ public class ViewStdAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public void onBindViewHolder(MyViewHolder myViewHolder, int position) {
         myViewHolder.classTv.setText(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getClassName());
         myViewHolder.rollNoTv.setText(String.valueOf(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getRollNumber()));
-        myViewHolder.nameTv.setText(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getName());
+        myViewHolder.nameTv.setText(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getFullName());
         myViewHolder.contactNumberTv.setText(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getContactNumber());
 
         myViewHolder.editBtn.setOnClickListener(e->this.viewStudentMain.viewStdEditBtnHandler.viewStdEditBtnHandlerMain(position));

@@ -28,7 +28,7 @@ public class AddStdSaveStdBtnHandler implements View.OnClickListener{
 
 
     private void addDataToDb(){
-        StudentModel studentModel=new StudentModel(this.rollNo,this.fullName,this.className,this.contactNumber);
+        StudentModel studentModel=new StudentModel(this.rollNo,this.fullName,this.firstName,this.lastname,this.className,this.contactNumber);
         boolean bool=SingleTon.getSingleTon().getHomeMain().homeStudentsDb.addStudent(studentModel);
         if (bool) {
             this.clearDataFromFields();

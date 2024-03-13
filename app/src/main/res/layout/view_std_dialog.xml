@@ -18,11 +18,11 @@
             android:text="Student name"
             android:textColor="@color/black"
             android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="@+id/fisrtNameEd"
+            app:layout_constraintStart_toStartOf="@+id/dialogFirstNameEd"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/fisrtNameEd"
+            android:id="@+id/dialogFirstNameEd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -37,7 +37,7 @@
             app:layout_constraintTop_toBottomOf="@+id/studentNameTv" />
 
         <EditText
-            android:id="@+id/lastNameEd"
+            android:id="@+id/dialogLastNameEd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -49,7 +49,7 @@
             android:textCursorDrawable="@drawable/edit_text_cursor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fisrtNameEd" />
+            app:layout_constraintTop_toBottomOf="@+id/dialogFirstNameEd" />
 
         <TextView
             android:id="@+id/rollNoAndClassTv"
@@ -61,11 +61,11 @@
             android:text="Roll no and class"
             android:textColor="@color/black"
             android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="@+id/rollNoEd"
-            app:layout_constraintTop_toBottomOf="@+id/lastNameEd" />
+            app:layout_constraintStart_toStartOf="@+id/dialogRollNoEd"
+            app:layout_constraintTop_toBottomOf="@+id/dialogLastNameEd" />
 
         <EditText
-            android:id="@+id/rollNoEd"
+            android:id="@+id/dialogRollNoEd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -76,11 +76,12 @@
             android:textColorHint="@color/edHintColor"
             android:textCursorDrawable="@drawable/edit_text_cursor"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rollNoAndClassTv" />
 
         <EditText
-            android:id="@+id/classNameEd"
+            android:id="@+id/dialogClassNameEd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -93,7 +94,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rollNoEd" />
+            app:layout_constraintTop_toBottomOf="@+id/dialogRollNoEd" />
 
 
         <TextView
@@ -106,11 +107,11 @@
             android:text="Contact number"
             android:textColor="@color/black"
             android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="@+id/rollNoEd"
-            app:layout_constraintTop_toBottomOf="@+id/classNameEd" />
+            app:layout_constraintStart_toStartOf="@+id/dialogRollNoEd"
+            app:layout_constraintTop_toBottomOf="@+id/dialogClassNameEd" />
 
         <EditText
-            android:id="@+id/contactNumberEd"
+            android:id="@+id/dialogContactNumberEd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -139,7 +140,7 @@
             app:cornerRadius="5dp"
             app:layout_constraintEnd_toStartOf="@+id/saveBtn"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contactNumberEd"
+            app:layout_constraintTop_toBottomOf="@+id/dialogContactNumberEd"
             app:rippleColor="@color/btnHoverColor" />
 
         <Button
@@ -156,7 +157,7 @@
             app:cornerRadius="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/cancelBtn"
-            app:layout_constraintTop_toBottomOf="@+id/contactNumberEd"
+            app:layout_constraintTop_toBottomOf="@+id/dialogContactNumberEd"
             app:rippleColor="@color/btnHoverColor" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

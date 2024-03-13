@@ -72,10 +72,11 @@
                 android:fontFamily="@font/baloo_bhai_2_medium"
                 android:text="Student name"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/firstNameEd"
+                app:layout_constraintStart_toStartOf="@+id/studentFirstNameEd"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <EditText
-                android:id="@+id/firstNameEd"
+                android:id="@+id/studentFirstNameEd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
@@ -86,11 +87,12 @@
                 android:textColor="@color/black"
                 android:textColorHint="@color/edHintColor"
                 android:textCursorDrawable="@drawable/edit_text_cursor"
-                app:layout_constraintEnd_toStartOf="@id/lastNameEd"
+                app:layout_constraintEnd_toStartOf="@id/studentLastNameEd"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameTv" />
+
             <EditText
-                android:id="@+id/lastNameEd"
+                android:id="@+id/studentLastNameEd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -102,8 +104,8 @@
                 android:textColorHint="@color/edHintColor"
                 android:textCursorDrawable="@drawable/edit_text_cursor"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/firstNameEd"
-                app:layout_constraintTop_toTopOf="@+id/firstNameEd" />
+                app:layout_constraintStart_toEndOf="@+id/studentFirstNameEd"
+                app:layout_constraintTop_toTopOf="@+id/studentFirstNameEd" />
             <TextView
                 android:id="@+id/rollNumberAndClassTv"
                 android:layout_width="wrap_content"
@@ -113,10 +115,10 @@
                 android:fontFamily="@font/baloo_bhai_2_medium"
                 android:text="Roll no and class"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/rollNoEd"
-                app:layout_constraintTop_toBottomOf="@+id/firstNameEd" />
+                app:layout_constraintStart_toStartOf="@+id/studentRollNoEd"
+                app:layout_constraintTop_toBottomOf="@+id/studentFirstNameEd" />
             <EditText
-                android:id="@+id/rollNoEd"
+                android:id="@+id/studentRollNoEd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
@@ -127,12 +129,12 @@
                 android:textColor="@color/black"
                 android:textColorHint="@color/edHintColor"
                 android:textCursorDrawable="@drawable/edit_text_cursor"
-                app:layout_constraintEnd_toStartOf="@id/classNameEd"
+                app:layout_constraintEnd_toStartOf="@id/studentClassNameEd"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rollNumberAndClassTv" />
             <EditText
-                android:id="@+id/classNameEd"
+                android:id="@+id/studentClassNameEd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -145,8 +147,8 @@
                 android:textCursorDrawable="@drawable/edit_text_cursor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/rollNoEd"
-                app:layout_constraintTop_toTopOf="@+id/rollNoEd" />
+                app:layout_constraintStart_toEndOf="@+id/studentRollNoEd"
+                app:layout_constraintTop_toTopOf="@+id/studentRollNoEd" />
 
             <TextView
                 android:id="@+id/stdContactNumberTv"
@@ -157,12 +159,12 @@
                 android:fontFamily="@font/baloo_bhai_2_medium"
                 android:text="Contact number"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/contactNumberEd"
-                app:layout_constraintTop_toBottomOf="@+id/rollNoEd" />
+                app:layout_constraintStart_toStartOf="@+id/studentContactNumberEd"
+                app:layout_constraintTop_toBottomOf="@+id/studentRollNoEd" />
 
 
             <EditText
-                android:id="@+id/contactNumberEd"
+                android:id="@+id/studentContactNumberEd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -209,7 +211,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/saveStudentBtn"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/contactNumberEd"
+                app:layout_constraintTop_toBottomOf="@+id/studentContactNumberEd"
                 app:rippleColor="@color/btnHoverColor" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

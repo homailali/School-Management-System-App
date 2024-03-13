@@ -6,7 +6,6 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import life.homail.SchoolManagementSystem.R;
-import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
 
 public class InstitutionInfoMain extends AppCompatActivity {
     protected EditText institutionNameEd;
@@ -44,10 +43,10 @@ public class InstitutionInfoMain extends AppCompatActivity {
     }
     private void initializingViews(){
         this.institutionNameEd=super.findViewById(R.id.institutionNameEd);
-        this.principalNameEd=super.findViewById(R.id.principalNameEd);
+        this.principalNameEd=super.findViewById(R.id.instituitonPrincipalNameEd);
         this.institutionLocationEd=super.findViewById(R.id.institutionLocationEd);
-        this.contactNumberEd=super.findViewById(R.id.contactNumberEd);
+        this.contactNumberEd=super.findViewById(R.id.institutionContactNumberEd);
         this.submitInfoBtn=super.findViewById(R.id.submitInfoBtn);
-        this.resetBtn=super.findViewById(R.id.resetBtn);
+        this.resetBtn=super.findViewById(R.id.institutionResetBtn);
     }
 }

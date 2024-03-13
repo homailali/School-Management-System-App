@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:background="@color/backgroundColor2">
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/institutionInfoHeading"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+            app:layout_constraintTop_toBottomOf="@+id/institutionInfoHeading">
 
 
             <TextView
@@ -78,11 +78,11 @@
                 android:text="Principal name"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/principalNameEd"
+                app:layout_constraintStart_toStartOf="@+id/instituitonPrincipalNameEd"
                 app:layout_constraintTop_toBottomOf="@+id/institutionNameEd" />
 
             <EditText
-                android:id="@+id/principalNameEd"
+                android:id="@+id/instituitonPrincipalNameEd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -109,7 +109,7 @@
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="@+id/institutionLocationEd"
-                app:layout_constraintTop_toBottomOf="@+id/principalNameEd" />
+                app:layout_constraintTop_toBottomOf="@+id/instituitonPrincipalNameEd" />
 
             <EditText
                 android:id="@+id/institutionLocationEd"
@@ -139,11 +139,11 @@
                 android:text="Contact number"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="@+id/contactNumberEd"
+                app:layout_constraintStart_toStartOf="@+id/institutionContactNumberEd"
                 app:layout_constraintTop_toBottomOf="@+id/institutionLocationEd" />
 
             <EditText
-                android:id="@+id/contactNumberEd"
+                android:id="@+id/institutionContactNumberEd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -170,12 +170,12 @@
                 android:textSize="27sp"
                 app:cornerRadius="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/resetBtn"
-                app:layout_constraintTop_toTopOf="@+id/resetBtn"
+                app:layout_constraintStart_toEndOf="@id/institutionResetBtn"
+                app:layout_constraintTop_toTopOf="@+id/institutionResetBtn"
                 app:rippleColor="@color/btnHoverColor" />
 
             <Button
-                android:id="@+id/resetBtn"
+                android:id="@+id/institutionResetBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -188,7 +188,7 @@
                 app:cornerRadius="5dp"
                 app:layout_constraintEnd_toStartOf="@+id/submitInfoBtn"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/contactNumberEd"
+                app:layout_constraintTop_toBottomOf="@+id/institutionContactNumberEd"
                 app:rippleColor="@color/btnHoverColor" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
