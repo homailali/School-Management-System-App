@@ -26,15 +26,15 @@ public class AddTeacherViews {
     }
     // methods
     private void initializeViews(){
-        this.goBackBtn=this.addTeacherMain.findViewById(R.id.goBackBtn);
-        this.resetBtn=this.addTeacherMain.findViewById(R.id.resetBtn);
-        this.saveTeacherBtn=this.addTeacherMain.findViewById(R.id.saveStudentBtn);
+        this.goBackBtn=this.addTeacherMain.findViewById(R.id.teacherGoBackBtn);
+        this.resetBtn=this.addTeacherMain.findViewById(R.id.teacherResetBtn);
+        this.saveTeacherBtn=this.addTeacherMain.findViewById(R.id.teacherSaveTeacherBtn);
         // initializing edit texts
-        this.firstNameEd=this.addTeacherMain.findViewById(R.id.firstNameEd);
-        this.lastNameEd=this.addTeacherMain.findViewById(R.id.lastNameEd);
+        this.firstNameEd=this.addTeacherMain.findViewById(R.id.teacherFirstNameEd);
+        this.lastNameEd=this.addTeacherMain.findViewById(R.id.teacherLastNameEd);
         this.teacherIdEd=this.addTeacherMain.findViewById(R.id.teacherIdEd);
-        this.subjectNameEd=this.addTeacherMain.findViewById(R.id.subjectNameEd);
-        this.phoneNumberEd=this.addTeacherMain.findViewById(R.id.phoneNumberEd);
+        this.subjectNameEd=this.addTeacherMain.findViewById(R.id.teacherSubjectNameEd);
+        this.phoneNumberEd=this.addTeacherMain.findViewById(R.id.teacherPhoneNumberEd);
     }
     private void setEventHandlers(){
         this.resetBtn.setOnClickListener(this::resetBtnHandler);

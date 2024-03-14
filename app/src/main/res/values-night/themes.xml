@@ -3,7 +3,7 @@
     <style name="Base.Theme.SchoolManagementSystem" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:textColor">@color/black</item>
         <item name="android:background">@color/white</item>
-        <item name="android:statusBarColor">@color/backgroundColor2</item>
+        <item name="android:statusBarColor">@color/backgroundColor</item>
 
         <item name="android:textColorHighlight">@color/handleAndTextSelectionColor</item>
         <item name="android:textSelectHandle">@drawable/cursor_handle</item>

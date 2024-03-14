@@ -1,10 +1,12 @@
 package life.homail.SchoolManagementSystem.ViewStudents;
 import android.app.Dialog;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import life.homail.SchoolManagementSystem.ModelClasses.StudentModel;
 import life.homail.SchoolManagementSystem.R;
-public class ViewStdDialogClass{
+public class ViewStdEditDialogClass {
     private ViewStudentMain viewStudentMain;
     private Dialog dialog;
 
@@ -18,7 +20,7 @@ public class ViewStdDialogClass{
 
 
 
-    protected ViewStdDialogClass (ViewStudentMain viewStudentMain){
+    protected ViewStdEditDialogClass(ViewStudentMain viewStudentMain){
         this.viewStudentMain =  viewStudentMain;
         this.setUpDialog();
         this.initializeDialogViews();
@@ -52,5 +54,18 @@ public class ViewStdDialogClass{
     }
     protected void setDialog(Dialog dialog){
         this.dialog = dialog;
+    }
+
+
+    // handling some events here
+    private void saveBtnHandler(View view){
+        String stdFirstName=String.valueOf(this.dialogFirstNameEd.getText());
+        String stdLastName=String.valueOf(this.dialogLastNameEd.getText());
+        String stdFullName=stdFirstName+" "+stdLastName;
+        long stdRollNo=Long.parseLong(String.valueOf(this.dialogRollNoEd.getText()));
+        String stdClassName=String.valueOf(this.dialogClassNameEd.getText());
+        String stdContactNumber=String.valueOf(this.dialogContactNumberEd.getText());
+
+        StudentModel studentModel=new StudentModel(stdRollNo,stdFullName,stdFirstName,stdLastName,stdClassName,stdContactNumber);
     }
 }

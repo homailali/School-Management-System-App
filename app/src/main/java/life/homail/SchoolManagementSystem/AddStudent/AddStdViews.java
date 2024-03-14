@@ -21,9 +21,9 @@ public class AddStdViews {
     }
 
     private void initializeViews(){
-        this.resetBtn=this.addStdMain.findViewById(R.id.resetBtn);
-        this.goBackBtn=this.addStdMain.findViewById(R.id.goBackBtn);
-        this.saveStdBtn=this.addStdMain.findViewById(R.id.saveStudentBtn);
+        this.resetBtn=this.addStdMain.findViewById(R.id.studentResetBtn);
+        this.goBackBtn=this.addStdMain.findViewById(R.id.studentGoBackBtn);
+        this.saveStdBtn=this.addStdMain.findViewById(R.id.studentSaveStudentBtn);
         // initializing edit texts
         this.firstNameEd=this.addStdMain.findViewById(R.id.studentFirstNameEd);
         this.lastNameEd=this.addStdMain.findViewById(R.id.studentLastNameEd);

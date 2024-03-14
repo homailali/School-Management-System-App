@@ -3,14 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="btnBgColor1">#0061AD</color>
-    <color name="btnBgColor2">#0061AD</color>
+    <color name="btnBgColor">#0061AD</color>
 
 
 
-    <color name="backgroundColor1">#0061AD</color>
-    <color name="backgroundColor2">#0061AD</color>
-    <color name="backgroundColor3">#A09ABC</color>
+    <color name="backgroundColor">#0061AD</color>
 
 
 

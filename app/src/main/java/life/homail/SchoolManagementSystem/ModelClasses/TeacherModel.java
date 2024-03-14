@@ -1,24 +1,29 @@
 package life.homail.SchoolManagementSystem.ModelClasses;
 
 public class TeacherModel {
-    private String teacherName;
+
+    private String teacherFirstName;
+    private String teacherLastName;
+    private String teacherFullName;
     private long teacherId;
     private String teacherSubject;
     private String teacherPhoneNumber;
 
-    public TeacherModel(String teacherName, long teacherId, String teacherSubject, String teacherPhoneNumber) {
-        this.teacherName = teacherName;
+    public TeacherModel(long teacherId,String teacherFullName,String teacherFirstName,String teacherLastName, String teacherSubject, String teacherPhoneNumber) {
         this.teacherId = teacherId;
+        this.teacherFullName = teacherFullName;
+        this.teacherFirstName=teacherFirstName;
+        this.teacherLastName=teacherLastName;
         this.teacherSubject = teacherSubject;
         this.teacherPhoneNumber = teacherPhoneNumber;
     }
 
-    public String getTeacherName() {
-        return teacherName;
+    public String getTeacherFullName() {
+        return teacherFullName;
     }
 
-    public void setTeacherName(String teacherName) {
-        this.teacherName = teacherName;
+    public void setTeacherFullName(String teacherFullName) {
+        this.teacherFullName = teacherFullName;
     }
 
     public long getTeacherId() {
@@ -39,6 +44,22 @@ public class TeacherModel {
 
     public String getTeacherPhoneNumber() {
         return teacherPhoneNumber;
+    }
+
+    public String getTeacherFirstName() {
+        return teacherFirstName;
+    }
+
+    public void setTeacherFirstName(String teacherFirstName) {
+        this.teacherFirstName = teacherFirstName;
+    }
+
+    public String getTeacherLastName() {
+        return teacherLastName;
+    }
+
+    public void setTeacherLastName(String teacherLastName) {
+        this.teacherLastName = teacherLastName;
     }
 
     public void setTeacherPhoneNumber(String teacherPhoneNumber) {

@@ -22,7 +22,7 @@ public class AddTeacSaveTeacBtnHandler implements View.OnClickListener{
         else this.addDataToDb();
     }
     private void addDataToDb(){
-        TeacherModel teacherModel=new TeacherModel(this.teacherFullName,this.teacherId,this.teacherSubject,this.teacherPhoneNumber);
+        TeacherModel teacherModel=new TeacherModel(this.teacherId,this.teacherFullName,this.teacherFirstName,this.teacherLastName,this.teacherSubject,this.teacherPhoneNumber);
         boolean bool=SingleTon.getSingleTon().getHomeMain().homeTeachersDb.addTeacher(teacherModel);
         if (bool){
             this.makeEveryEdEmpty();

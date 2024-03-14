@@ -13,7 +13,7 @@ public class ViewStdEditBtnHandler{
     }
     protected void viewStdEditBtnHandlerMain(int position){
         this.studentModel= SingleTon.getSingleTon().getStudentModelArrayList().get(position);
-        this.viewStudentMain.viewStdDialogClass.getDialog().show();
+        this.viewStudentMain.viewStdEditDialogClass.getDialog().show();
         try {
             this.setTextOnDialog();
         } catch (Exception exception){
@@ -37,10 +37,10 @@ public class ViewStdEditBtnHandler{
         Log.d("temp",contactNumber);
 
 
-        this.viewStudentMain.viewStdDialogClass.dialogFirstNameEd.setText(firstName);
-        this.viewStudentMain.viewStdDialogClass.dialogLastNameEd.setText(lastName);
-        this.viewStudentMain.viewStdDialogClass.dialogRollNoEd.setText(String.valueOf(rollNo));
-        this.viewStudentMain.viewStdDialogClass.dialogClassNameEd.setText(className);
-        this.viewStudentMain.viewStdDialogClass.dialogContactNumberEd.setText(contactNumber);
+        this.viewStudentMain.viewStdEditDialogClass.dialogFirstNameEd.setText(firstName);
+        this.viewStudentMain.viewStdEditDialogClass.dialogLastNameEd.setText(lastName);
+        this.viewStudentMain.viewStdEditDialogClass.dialogRollNoEd.setText(String.valueOf(rollNo));
+        this.viewStudentMain.viewStdEditDialogClass.dialogClassNameEd.setText(className);
+        this.viewStudentMain.viewStdEditDialogClass.dialogContactNumberEd.setText(contactNumber);
     }
 }

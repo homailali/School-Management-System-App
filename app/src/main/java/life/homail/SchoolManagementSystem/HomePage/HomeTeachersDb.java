@@ -15,7 +15,9 @@ public class HomeTeachersDb extends SQLiteOpenHelper {
     private static final String DB_NAME="TeachersDB";
     private static final String TABLE_NAME="TeachersData";
     private static final String TEACHER_ID_COLUMN="Id";
-    private static final String TEACHER_NAME_COLUMN="Name";
+    private static final String TEACHER_FIRST_NAME_COLUMN="FirstName";
+    private static final String TEACHER_LAST_NAME_COLUMN="LastName";
+    private static final String TEACHER_FULL_NAME_COLUMN="Name";
     private static final String TEACHER_SUBJECT_COLUMN="Subject";
     private static final String TEACHER_PHONE_NUMBER_COLUMN="PhoneNumber";
 
@@ -33,7 +35,9 @@ public class HomeTeachersDb extends SQLiteOpenHelper {
                 "create table "+TABLE_NAME
                 +" ("
                 +TEACHER_ID_COLUMN+" integer primary key,"
-                +TEACHER_NAME_COLUMN+" text ,"
+                +TEACHER_FULL_NAME_COLUMN+" text ,"
+                +TEACHER_FIRST_NAME_COLUMN+" text,"
+                +TEACHER_LAST_NAME_COLUMN+"text,"
                 +TEACHER_SUBJECT_COLUMN+" text ,"
                 +TEACHER_PHONE_NUMBER_COLUMN+" text "
                 +")";
@@ -44,7 +48,7 @@ public class HomeTeachersDb extends SQLiteOpenHelper {
     public boolean addTeacher(TeacherModel teacherModel){
         SQLiteDatabase sqLiteDatabase=super.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
-        contentValues.put(TEACHER_NAME_COLUMN,teacherModel.getTeacherName());
+        contentValues.put(TEACHER_FULL_NAME_COLUMN,teacherModel.getTeacherFullName());
         contentValues.put(TEACHER_ID_COLUMN,teacherModel.getTeacherId());
         contentValues.put(TEACHER_SUBJECT_COLUMN,teacherModel.getTeacherSubject());
         contentValues.put(TEACHER_PHONE_NUMBER_COLUMN,teacherModel.getTeacherPhoneNumber());
@@ -59,10 +63,12 @@ public class HomeTeachersDb extends SQLiteOpenHelper {
         if (cursor.moveToFirst()){
             do {
                 long teacherId=cursor.getLong(0);
-                String teacherName=cursor.getString(1);
-                String teacherSubject=cursor.getString(2);
-                String phoneNumber=cursor.getString(3);
-                TeacherModel teacherModel=new TeacherModel(teacherName,teacherId,teacherSubject,phoneNumber);
+                String teacherFullName=cursor.getString(1);
+                String teacherFirstName=cursor.getString(2);
+                String teacherLastName=cursor.getString(3);
+                String teacherSubject=cursor.getString(4);
+                String phoneNumber=cursor.getString(5);
+                TeacherModel teacherModel=new TeacherModel(teacherId,teacherFullName,teacherFirstName,teacherLastName,teacherSubject,phoneNumber);
                 tempArrList.add(teacherModel);
             } while (cursor.moveToNext());
         }
@@ -79,7 +85,9 @@ public class HomeTeachersDb extends SQLiteOpenHelper {
     public boolean updateTeacherData(TeacherModel oldModel,TeacherModel newModel){
         SQLiteDatabase sqLiteDatabase=super.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
-        contentValues.put(TEACHER_NAME_COLUMN,newModel.getTeacherName());
+        contentValues.put(TEACHER_FULL_NAME_COLUMN,newModel.getTeacherFullName());
+        contentValues.put(TEACHER_FIRST_NAME_COLUMN,newModel.getTeacherFirstName());
+        contentValues.put(TEACHER_LAST_NAME_COLUMN,newModel.getTeacherLastName());
         contentValues.put(TEACHER_ID_COLUMN,newModel.getTeacherId());
         contentValues.put(TEACHER_SUBJECT_COLUMN,newModel.getTeacherSubject());
         contentValues.put(TEACHER_PHONE_NUMBER_COLUMN,newModel.getTeacherPhoneNumber());
