@@ -19,11 +19,11 @@
             android:text="Student name"
             android:textColor="@color/black"
             android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="@+id/dialogFirstNameEd"
+            app:layout_constraintStart_toStartOf="@+id/editDialogFirstNameEd"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/dialogFirstNameEd"
+            android:id="@+id/editDialogFirstNameEd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -38,7 +38,7 @@
             app:layout_constraintTop_toBottomOf="@+id/studentNameTv" />
 
         <EditText
-            android:id="@+id/dialogLastNameEd"
+            android:id="@+id/editDialogLastNameEd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -50,7 +50,7 @@
             android:textCursorDrawable="@drawable/edit_text_cursor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dialogFirstNameEd" />
+            app:layout_constraintTop_toBottomOf="@+id/editDialogFirstNameEd" />
 
         <TextView
             android:id="@+id/rollNoAndClassTv"
@@ -62,27 +62,26 @@
             android:text="Roll no and class"
             android:textColor="@color/black"
             android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="@+id/dialogRollNoEd"
-            app:layout_constraintTop_toBottomOf="@+id/dialogLastNameEd" />
+            app:layout_constraintStart_toStartOf="@+id/editDialogRollNoEd"
+            app:layout_constraintTop_toBottomOf="@+id/editDialogLastNameEd" />
 
         <EditText
-            android:id="@+id/dialogRollNoEd"
+            android:id="@+id/editDialogRollNoEd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_text_bg"
             android:hint="Roll number"
-            android:inputType="text"
+            android:inputType="number"
             android:padding="15dp"
             android:textColorHint="@color/edHintColor"
             android:textCursorDrawable="@drawable/edit_text_cursor"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rollNoAndClassTv" />
 
         <EditText
-            android:id="@+id/dialogClassNameEd"
+            android:id="@+id/editDialogClassNameEd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -95,7 +94,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dialogRollNoEd" />
+            app:layout_constraintTop_toBottomOf="@+id/editDialogRollNoEd" />
 
 
         <TextView
@@ -108,22 +107,21 @@
             android:text="Contact number"
             android:textColor="@color/black"
             android:textSize="20dp"
-            app:layout_constraintStart_toStartOf="@+id/dialogRollNoEd"
-            app:layout_constraintTop_toBottomOf="@+id/dialogClassNameEd" />
+            app:layout_constraintStart_toStartOf="@+id/editDialogRollNoEd"
+            app:layout_constraintTop_toBottomOf="@+id/editDialogClassNameEd" />
 
         <EditText
-            android:id="@+id/dialogContactNumberEd"
+            android:id="@+id/editDialogContactNumberEd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@drawable/edit_text_bg"
             android:hint="Contact number"
-            android:inputType="text"
+            android:inputType="number"
             android:padding="15dp"
             android:textColorHint="@color/edHintColor"
             android:textCursorDrawable="@drawable/edit_text_cursor"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/contactNumberTv" />
 
@@ -137,11 +135,11 @@
             android:fontFamily="@font/baloo_bhai_2_medium"
             android:text="Cancel"
             android:textColor="@color/white"
-            android:textSize="25dp"
+            android:textSize="25sp"
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toStartOf="@+id/saveBtn"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dialogContactNumberEd"
+            app:layout_constraintTop_toBottomOf="@+id/editDialogContactNumberEd"
             app:rippleColor="@color/btnHoverColor" />
 
         <Button
@@ -154,11 +152,11 @@
             android:fontFamily="@font/baloo_bhai_2_medium"
             android:text="Save"
             android:textColor="@color/white"
-            android:textSize="25dp"
+            android:textSize="25sp"
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/cancelBtn"
-            app:layout_constraintTop_toBottomOf="@+id/dialogContactNumberEd"
+            app:layout_constraintTop_toBottomOf="@+id/editDialogContactNumberEd"
             app:rippleColor="@color/btnHoverColor" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

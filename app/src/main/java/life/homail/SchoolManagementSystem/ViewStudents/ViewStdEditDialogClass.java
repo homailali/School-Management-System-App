@@ -1,22 +1,19 @@
 package life.homail.SchoolManagementSystem.ViewStudents;
 import android.app.Dialog;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-import life.homail.SchoolManagementSystem.ModelClasses.StudentModel;
 import life.homail.SchoolManagementSystem.R;
 public class ViewStdEditDialogClass {
     private ViewStudentMain viewStudentMain;
-    private Dialog dialog;
+    private Dialog editDialog;
 
     protected Button saveBtn;
     protected Button cancelBtn;
-    protected EditText dialogFirstNameEd;
-    protected EditText dialogLastNameEd;
-    protected EditText dialogRollNoEd;
-    protected EditText dialogClassNameEd;
-    protected EditText dialogContactNumberEd;
+    protected EditText editDialogFirstNameEd;
+    protected EditText editDialogLastNameEd;
+    protected EditText editDialogRollNoEd;
+    protected EditText editDialogClassNameEd;
+    protected EditText editDialogContactNumberEd;
 
 
 
@@ -27,45 +24,33 @@ public class ViewStdEditDialogClass {
         this.setEventHandlers();
     }
     private void setUpDialog(){
-        this.dialog=new Dialog(this.viewStudentMain);
-        this.dialog.setContentView(R.layout.view_std_dialog);
-        this.dialog.setCancelable(false);
+        this.editDialog=new Dialog(this.viewStudentMain);
+        this.editDialog.setContentView(R.layout.view_std_edit_dialog);
+        this.editDialog.setCancelable(false);
     }
     private void initializeDialogViews(){
         // buttons
-        this.saveBtn=this.dialog.findViewById(R.id.saveBtn);
-        this.cancelBtn=this.dialog.findViewById(R.id.cancelBtn);
+        this.saveBtn=this.editDialog.findViewById(R.id.saveBtn);
+        this.cancelBtn=this.editDialog.findViewById(R.id.cancelBtn);
         // edittext's
-        this.dialogFirstNameEd=this.dialog.findViewById(R.id.dialogFirstNameEd);
-        this.dialogLastNameEd=this.dialog.findViewById(R.id.dialogLastNameEd);
-        this.dialogRollNoEd=this.dialog.findViewById(R.id.dialogRollNoEd);
-        this.dialogClassNameEd=this.dialog.findViewById(R.id.dialogClassNameEd);
-        this.dialogContactNumberEd=this.dialog.findViewById(R.id.dialogContactNumberEd);
+        this.editDialogFirstNameEd=this.editDialog.findViewById(R.id.editDialogFirstNameEd);
+        this.editDialogLastNameEd=this.editDialog.findViewById(R.id.editDialogLastNameEd);
+        this.editDialogRollNoEd=this.editDialog.findViewById(R.id.editDialogRollNoEd);
+        this.editDialogClassNameEd=this.editDialog.findViewById(R.id.editDialogClassNameEd);
+        this.editDialogContactNumberEd=this.editDialog.findViewById(R.id.editDialogContactNumberEd);
     }
-
     private void setEventHandlers(){
         this.cancelBtn.setOnClickListener(e->{
-            this.dialog.dismiss();
+            this.editDialog.dismiss();
+        });
+        this.saveBtn.setOnClickListener(e->{
+            this.viewStudentMain.viewStdEditBtnHandler.saveBtnHandler();
         });
     }
-
-    protected Dialog getDialog(){
-        return dialog;
+    protected Dialog getEditDialog(){
+        return editDialog;
     }
-    protected void setDialog(Dialog dialog){
-        this.dialog = dialog;
-    }
-
-
-    // handling some events here
-    private void saveBtnHandler(View view){
-        String stdFirstName=String.valueOf(this.dialogFirstNameEd.getText());
-        String stdLastName=String.valueOf(this.dialogLastNameEd.getText());
-        String stdFullName=stdFirstName+" "+stdLastName;
-        long stdRollNo=Long.parseLong(String.valueOf(this.dialogRollNoEd.getText()));
-        String stdClassName=String.valueOf(this.dialogClassNameEd.getText());
-        String stdContactNumber=String.valueOf(this.dialogContactNumberEd.getText());
-
-        StudentModel studentModel=new StudentModel(stdRollNo,stdFullName,stdFirstName,stdLastName,stdClassName,stdContactNumber);
+    protected void setEditDialog(Dialog editDialog){
+        this.editDialog = editDialog;
     }
 }

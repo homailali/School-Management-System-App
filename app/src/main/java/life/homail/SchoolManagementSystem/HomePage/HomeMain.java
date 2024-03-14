@@ -2,10 +2,9 @@ package life.homail.SchoolManagementSystem.HomePage;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 
 import java.util.ArrayList;
-import life.homail.SchoolManagementSystem.ModelClasses.HomeAdpModel;
+
 import life.homail.SchoolManagementSystem.R;
 import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
 import life.homail.SchoolManagementSystem.SplashScreen.SplashScreenMain;
@@ -17,7 +16,6 @@ public class HomeMain extends AppCompatActivity {
     private String institutionLocation;
     protected HomePageViews homePageViews;
     private SplashScreenMain splashScreenMain;
-    protected ArrayList<HomeAdpModel> homeAdpModelsArr=new ArrayList<>();
     public HomeStudentsDb homeStudentsDb=new HomeStudentsDb(this);
     public HomeTeachersDb homeTeachersDb=new HomeTeachersDb(this);
     // Methods

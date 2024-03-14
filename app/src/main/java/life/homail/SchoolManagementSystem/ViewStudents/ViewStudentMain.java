@@ -9,6 +9,7 @@ import life.homail.SchoolManagementSystem.R;
 public class ViewStudentMain extends AppCompatActivity{
     protected RecyclerView viewStdRcView;
     protected ViewStdEditDialogClass viewStdEditDialogClass;
+    protected ViewStdDeleteDialogClass viewStdDeleteDialogClass;
     protected ViewStdAdapter viewStdAdapter=new ViewStdAdapter(this);
     protected ViewStdEditBtnHandler viewStdEditBtnHandler=new ViewStdEditBtnHandler(this);
     protected ViewStdDeleteBtnHandler viewStdDeleteBtnHandler = new ViewStdDeleteBtnHandler(this);
@@ -20,8 +21,13 @@ public class ViewStudentMain extends AppCompatActivity{
     }
 
     private void atEndOfOnCreate(){
-        this.viewStdEditDialogClass =new ViewStdEditDialogClass(this);
+        this.setUpDialogs();
         this.rcViewAndAdapterSettings();
+    }
+
+    private void setUpDialogs(){
+        this.viewStdEditDialogClass =new ViewStdEditDialogClass(this);
+        this.viewStdDeleteDialogClass=new ViewStdDeleteDialogClass(this);
     }
     private void rcViewAndAdapterSettings(){
         this.viewStdRcView=super.findViewById(R.id.viewStdRcView);

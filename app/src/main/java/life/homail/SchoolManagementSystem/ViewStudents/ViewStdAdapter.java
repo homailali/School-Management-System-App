@@ -47,7 +47,7 @@ public class ViewStdAdapter extends RecyclerView.Adapter<MyViewHolder> {
         myViewHolder.deleteBtn.setOnClickListener(e->this.viewStudentMain.viewStdDeleteBtnHandler.viewStdDeleteBtnHandlerMain(position));
     }
 
-    private void getAndSetValueOfLayoutsHeight(MyViewHolder myViewHolder) {
+    protected void getAndSetValueOfLayoutsHeight(MyViewHolder myViewHolder) {
         int maxHeight;
         int nameLayoutHeight = myViewHolder.nameConstraintLayout.getHeight();
         int rollNoLayoutHeight = myViewHolder.rollNoConstraintLayout.getHeight();
