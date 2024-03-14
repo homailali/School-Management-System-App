@@ -46,12 +46,12 @@ public class HomeStudentsDb extends SQLiteOpenHelper{
     public boolean addStudent(StudentModel studentModel){
         SQLiteDatabase sqLiteDatabase=super.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
-        contentValues.put(ROLL_NO_COL,studentModel.getRollNumber());
-        contentValues.put(FULL_NAME,studentModel.getFullName());
-        contentValues.put(FIRST_NAME_COL,studentModel.getFirstName());
-        contentValues.put(LAST_NAME_COL, studentModel.getLastName());
-        contentValues.put(CLASS_NAME_COL,studentModel.getClassName());
-        contentValues.put(CONTACT_NUMBER_COL,studentModel.getContactNumber());
+        contentValues.put(ROLL_NO_COL,studentModel.getStudentRollNumber());
+        contentValues.put(FULL_NAME,studentModel.getStudentFullName());
+        contentValues.put(FIRST_NAME_COL,studentModel.getStudentFirstName());
+        contentValues.put(LAST_NAME_COL, studentModel.getStudentLastName());
+        contentValues.put(CLASS_NAME_COL,studentModel.getStudentClassName());
+        contentValues.put(CONTACT_NUMBER_COL,studentModel.getStudentContactNumber());
         long temp=sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
         sqLiteDatabase.close();
         return temp!=-1;
@@ -78,20 +78,20 @@ public class HomeStudentsDb extends SQLiteOpenHelper{
     }
     public boolean deleteStudent(StudentModel studentModel){
         SQLiteDatabase sqLiteDatabase=super.getWritableDatabase();
-        int temp=sqLiteDatabase.delete(TABLE_NAME,ROLL_NO_COL+"=?",new String[]{String.valueOf(studentModel.getRollNumber())});
+        int temp=sqLiteDatabase.delete(TABLE_NAME,ROLL_NO_COL+"=?",new String[]{String.valueOf(studentModel.getStudentRollNumber())});
         sqLiteDatabase.close();
         return temp!=0;
     }
     public boolean updateStudentData(StudentModel oldModel,StudentModel newModel){
         SQLiteDatabase sqLiteDatabase=super.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
-        contentValues.put(ROLL_NO_COL,newModel.getRollNumber());
-        contentValues.put(FULL_NAME,newModel.getFullName());
-        contentValues.put(FIRST_NAME_COL,newModel.getFirstName());
-        contentValues.put(LAST_NAME_COL,newModel.getLastName());
-        contentValues.put(CLASS_NAME_COL,newModel.getClassName());
-        contentValues.put(CONTACT_NUMBER_COL,newModel.getContactNumber());
-        int temp=sqLiteDatabase.update(TABLE_NAME,contentValues,ROLL_NO_COL+"=?",new String[]{String.valueOf(oldModel.getRollNumber())});
+        contentValues.put(ROLL_NO_COL,newModel.getStudentRollNumber());
+        contentValues.put(FULL_NAME,newModel.getStudentFullName());
+        contentValues.put(FIRST_NAME_COL,newModel.getStudentFirstName());
+        contentValues.put(LAST_NAME_COL,newModel.getStudentLastName());
+        contentValues.put(CLASS_NAME_COL,newModel.getStudentClassName());
+        contentValues.put(CONTACT_NUMBER_COL,newModel.getStudentContactNumber());
+        int temp=sqLiteDatabase.update(TABLE_NAME,contentValues,ROLL_NO_COL+"=?",new String[]{String.valueOf(oldModel.getStudentRollNumber())});
         sqLiteDatabase.close();
         return temp!=0;
     }

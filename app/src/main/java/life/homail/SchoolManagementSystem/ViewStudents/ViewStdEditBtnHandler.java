@@ -16,11 +16,11 @@ public class ViewStdEditBtnHandler{
         this.setTextOnDialog();
     }
     private void setTextOnDialog(){
-        String firstName=this.oldStudentModel.getFirstName();
-        String lastName=this.oldStudentModel.getLastName();
-        long rollNo= oldStudentModel.getRollNumber();
-        String className=oldStudentModel.getClassName();
-        String contactNumber=oldStudentModel.getContactNumber();
+        String firstName=this.oldStudentModel.getStudentFirstName();
+        String lastName=this.oldStudentModel.getStudentLastName();
+        long rollNo= oldStudentModel.getStudentRollNumber();
+        String className=oldStudentModel.getStudentClassName();
+        String contactNumber=oldStudentModel.getStudentContactNumber();
         this.viewStudentMain.viewStdEditDialogClass.editDialogFirstNameEd.setText(firstName);
         this.viewStudentMain.viewStdEditDialogClass.editDialogLastNameEd.setText(lastName);
         this.viewStudentMain.viewStdEditDialogClass.editDialogRollNoEd.setText(String.valueOf(rollNo));
@@ -60,10 +60,10 @@ public class ViewStdEditBtnHandler{
         this.viewStudentMain.viewStdRcView.setAdapter(this.viewStudentMain.viewStdAdapter);
     }
     private boolean ifAnyFieldIsEmpty(StudentModel newStudentModel){
-        return newStudentModel.getFirstName().isBlank() ||
-        newStudentModel.getLastName().isBlank() ||
-        String.valueOf(newStudentModel.getRollNumber()).isBlank() ||
-        newStudentModel.getClassName().isBlank() ||
-        newStudentModel.getContactNumber().isBlank();
+        return newStudentModel.getStudentFirstName().isBlank() ||
+        newStudentModel.getStudentLastName().isBlank() ||
+        String.valueOf(newStudentModel.getStudentRollNumber()).isBlank() ||
+        newStudentModel.getStudentClassName().isBlank() ||
+        newStudentModel.getStudentContactNumber().isBlank();
     }
 }

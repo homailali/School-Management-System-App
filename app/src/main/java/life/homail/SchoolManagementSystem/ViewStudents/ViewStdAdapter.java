@@ -38,10 +38,10 @@ public class ViewStdAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public void onBindViewHolder(MyViewHolder myViewHolder, int position) {
-        myViewHolder.classTv.setText(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getClassName());
-        myViewHolder.rollNoTv.setText(String.valueOf(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getRollNumber()));
-        myViewHolder.nameTv.setText(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getFullName());
-        myViewHolder.contactNumberTv.setText(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getContactNumber());
+        myViewHolder.classTv.setText(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getStudentClassName());
+        myViewHolder.rollNoTv.setText(String.valueOf(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getStudentRollNumber()));
+        myViewHolder.nameTv.setText(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getStudentFullName());
+        myViewHolder.contactNumberTv.setText(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getStudentContactNumber());
 
         myViewHolder.editBtn.setOnClickListener(e->this.viewStudentMain.viewStdEditBtnHandler.viewStdEditBtnHandlerMain(position));
         myViewHolder.deleteBtn.setOnClickListener(e->this.viewStudentMain.viewStdDeleteBtnHandler.viewStdDeleteBtnHandlerMain(position));
