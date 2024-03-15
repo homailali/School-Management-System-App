@@ -1,39 +1,54 @@
 package life.homail.SchoolManagementSystem.ViewStudents;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import life.homail.SchoolManagementSystem.R;
 
-public class ViewStudentMain extends AppCompatActivity{
-    protected RecyclerView viewStdRcView;
+public class ViewStudentMain extends AppCompatActivity {
+    protected String currentSearchBySelection = "id";
+    protected SearchByBtnHandler searchByBtnHandler;
+    protected ViewStudentMainViews viewStudentMainViews;
     protected ViewStdEditDialogClass viewStdEditDialogClass;
     protected ViewStdDeleteDialogClass viewStdDeleteDialogClass;
-    protected ViewStdAdapter viewStdAdapter=new ViewStdAdapter(this);
-    protected ViewStdEditBtnHandler viewStdEditBtnHandler=new ViewStdEditBtnHandler(this);
+    protected SearchStdEdTextChangeListener searchStdEdTextChangeListener;
+    protected ViewStdAdapter viewStdAdapter = new ViewStdAdapter(this);
+    protected ViewStdEditBtnHandler viewStdEditBtnHandler = new ViewStdEditBtnHandler(this);
     protected ViewStdDeleteBtnHandler viewStdDeleteBtnHandler = new ViewStdDeleteBtnHandler(this);
+
     @Override
-    public void onCreate(Bundle getCodeFromParent){
+    public void onCreate(Bundle getCodeFromParent) {
         super.onCreate(getCodeFromParent);
         super.setContentView(R.layout.view_student_activity);
         this.atEndOfOnCreate();
     }
 
-    private void atEndOfOnCreate(){
-        this.setUpDialogs();
+    private void atEndOfOnCreate() {
+        this.createSomeObjects();
+        this.setUpDialogsClasses();
         this.rcViewAndAdapterSettings();
     }
 
-    private void setUpDialogs(){
-        this.viewStdEditDialogClass =new ViewStdEditDialogClass(this);
-        this.viewStdDeleteDialogClass=new ViewStdDeleteDialogClass(this);
+
+
+    private void createSomeObjects(){
+        this.viewStudentMainViews=new ViewStudentMainViews(this);
+        this.searchByBtnHandler=new SearchByBtnHandler(this);
+        this.searchStdEdTextChangeListener =new SearchStdEdTextChangeListener(this);
     }
-    private void rcViewAndAdapterSettings(){
-        this.viewStdRcView=super.findViewById(R.id.viewStdRcView);
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
+
+    private void setUpDialogsClasses() {
+        this.viewStdEditDialogClass = new ViewStdEditDialogClass(this);
+        this.viewStdDeleteDialogClass = new ViewStdDeleteDialogClass(this);
+    }
+
+
+
+    private void rcViewAndAdapterSettings() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        this.viewStdRcView.setLayoutManager(linearLayoutManager);
-        this.viewStdRcView.setAdapter(this.viewStdAdapter);
+        this.viewStudentMainViews.viewStdRcView.setLayoutManager(linearLayoutManager);
+        this.viewStudentMainViews.viewStdRcView.setAdapter(this.viewStdAdapter);
     }
 }

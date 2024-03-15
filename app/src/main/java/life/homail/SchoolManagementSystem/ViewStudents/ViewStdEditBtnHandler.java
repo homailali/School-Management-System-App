@@ -57,7 +57,7 @@ public class ViewStdEditBtnHandler{
     }
     private void updateDataInArrayListAndSetLayoutHeight(StudentModel newStudentModel){
         SingleTon.getSingleTon().getStudentModelArrayList().set(this.position,newStudentModel);
-        this.viewStudentMain.viewStdRcView.setAdapter(this.viewStudentMain.viewStdAdapter);
+        this.viewStudentMain.viewStudentMainViews.viewStdRcView.setAdapter(this.viewStudentMain.viewStdAdapter);
     }
     private boolean ifAnyFieldIsEmpty(StudentModel newStudentModel){
         return newStudentModel.getStudentFirstName().isBlank() ||
