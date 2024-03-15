@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import life.homail.SchoolManagementSystem.R;
 
 public class ViewStudentMain extends AppCompatActivity {
-    protected String currentSearchBySelection = "id";
+    protected String currentSearchBySelection = "roll Number";
     protected SearchByBtnHandler searchByBtnHandler;
     protected ViewStudentMainViews viewStudentMainViews;
     protected ViewStdEditDialogClass viewStdEditDialogClass;
@@ -33,9 +33,9 @@ public class ViewStudentMain extends AppCompatActivity {
 
 
     private void createSomeObjects(){
-        this.viewStudentMainViews=new ViewStudentMainViews(this);
         this.searchByBtnHandler=new SearchByBtnHandler(this);
         this.searchStdEdTextChangeListener =new SearchStdEdTextChangeListener(this);
+        this.viewStudentMainViews=new ViewStudentMainViews(this);
     }
 
     private void setUpDialogsClasses() {
