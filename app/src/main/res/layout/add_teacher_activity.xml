@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/teacherGoBackBtn"
+            android:id="@+id/viewTeacherGoBackBtn"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="-3dp"

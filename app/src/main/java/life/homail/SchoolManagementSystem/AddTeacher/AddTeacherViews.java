@@ -26,7 +26,7 @@ public class AddTeacherViews {
     }
     // methods
     private void initializeViews(){
-        this.goBackBtn=this.addTeacherMain.findViewById(R.id.teacherGoBackBtn);
+        this.goBackBtn=this.addTeacherMain.findViewById(R.id.viewTeacherGoBackBtn);
         this.resetBtn=this.addTeacherMain.findViewById(R.id.teacherResetBtn);
         this.saveTeacherBtn=this.addTeacherMain.findViewById(R.id.teacherSaveTeacherBtn);
         // initializing edit texts

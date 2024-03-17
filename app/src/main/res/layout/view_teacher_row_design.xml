@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout1"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/all_rounded_bg"
+        android:backgroundTint="@color/backgroundColor"
+        android:paddingStart="15dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <Button
+            android:id="@+id/viewTeachersEditBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/backgroundColor"
+            android:drawableTop="@drawable/edit_drawable"
+            android:paddingTop="9dp"
+            app:cornerRadius="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@color/btnHoverColor" />
+        <Button
+            android:id="@+id/viewTeachersDeleteBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/backgroundColor"
+            android:drawableTop="@drawable/delete_drawable"
+            android:paddingTop="9dp"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@color/btnHoverColor" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/backgroundColor"
+            android:fontFamily="@font/baloo_bhai_2_medium"
+            android:text="Edit/Delete"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/viewTeachersDeleteBtn"
+            app:layout_constraintEnd_toStartOf="@+id/viewTeachersDeleteBtn"
+            app:layout_constraintStart_toEndOf="@+id/viewTeachersEditBtn"
+            app:layout_constraintTop_toTopOf="@+id/viewTeachersEditBtn" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewTeachersNameConstraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/all_rounded_bg"
+            android:padding="15dp"
+            app:layout_constraintBottom_toTopOf="@id/viewTeachersSubjectConstraintLayout"
+            app:layout_constraintEnd_toStartOf="@id/viewTeachersIdConstraintLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewTeachersEditBtn">
+            <TextView
+                android:id="@+id/viewTeachersNameHeadingTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_bold"
+                android:gravity="center"
+                android:lineSpacingExtra="-10dp"
+                android:text="Name"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/viewTeachersNameTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/viewTeachersNameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:gravity="center"
+                android:lineSpacingExtra="-15dp"
+                android:text="Sir bhuran"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewTeachersNameHeadingTv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewTeachersIdConstraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/all_rounded_bg"
+            android:padding="15dp"
+            app:layout_constraintBottom_toTopOf="@id/viewTeachersPhoneNumberConstraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/viewTeachersNameConstraintLayout"
+            app:layout_constraintTop_toBottomOf="@+id/viewTeachersDeleteBtn">
+            <TextView
+                android:id="@+id/viewTeachersIdHeadingTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_bold"
+                android:gravity="center"
+                android:lineSpacingExtra="-10dp"
+                android:text="Id"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/viewTeachersIdTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/viewTeachersIdTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:gravity="center"
+                android:lineSpacingExtra="-15dp"
+                android:text="3444"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewTeachersIdHeadingTv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewTeachersSubjectConstraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/all_rounded_bg"
+            android:padding="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/viewTeachersPhoneNumberConstraintLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewTeachersNameConstraintLayout">
+
+            <TextView
+                android:id="@+id/viewTeachersSubjectHeadingTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_bold"
+                android:gravity="center"
+                android:lineSpacingExtra="-10dp"
+                android:text="Subject"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/viewTeachersSubjectTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/viewTeachersSubjectTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:gravity="center"
+                android:lineSpacingExtra="-15dp"
+                android:text="computer"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewTeachersSubjectHeadingTv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewTeachersPhoneNumberConstraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/all_rounded_bg"
+            android:padding="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/viewTeachersSubjectConstraintLayout"
+            app:layout_constraintTop_toBottomOf="@+id/viewTeachersIdConstraintLayout"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/viewTeachersPhoneNumberHeadingTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_bold"
+                android:gravity="center"
+                android:lineSpacingExtra="-10dp"
+                android:text="Phone Number"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/viewTeachersPhoneNumberTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/viewTeachersPhoneNumberTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:gravity="center"
+                android:lineSpacingExtra="-15dp"
+                android:text="03406358285"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewTeachersPhoneNumberHeadingTv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
