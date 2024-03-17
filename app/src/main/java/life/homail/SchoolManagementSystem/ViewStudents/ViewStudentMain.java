@@ -26,8 +26,7 @@ public class ViewStudentMain extends AppCompatActivity {
         super.onBackPressed();
         SingleTon.getSingleTon().setStudentModelArrayList(SingleTon.getSingleTon().getHomeMain().homeStudentsDb.getAllStudentsData());
     }
-
-    private void atEndOfOnCreate() {
+    private void atEndOfOnCreate(){
         this.createSomeObjects();
         this.rcViewAndAdapterSettings();
         this.setNoStdTvVisibility("No students added");
@@ -38,7 +37,7 @@ public class ViewStudentMain extends AppCompatActivity {
         boolean bool=SingleTon.getSingleTon().getStudentModelArrayList().size()==0;
         this.viewStudentMainViews.noStudentsTv.setVisibility(bool?View.VISIBLE:View.INVISIBLE);
         // approach 2  does not works (gives error:not a statement)
-//        SingleTon.getSingleTon().getStudentModelArrayList().size() == 0 ? this.viewStudentMainViews.noStudentsTv.setVisibility(View.VISIBLE) : this.viewStudentMainViews.noStudentsTv.setVisibility(View.INVISIBLE);
+        // SingleTon.getSingleTon().getStudentModelArrayList().size() == 0 ? this.viewStudentMainViews.noStudentsTv.setVisibility(View.VISIBLE) : this.viewStudentMainViews.noStudentsTv.setVisibility(View.INVISIBLE);
     }
     private void createSomeObjects(){
         this.searchByBtnHandler=new SearchByBtnHandler(this);
@@ -47,7 +46,7 @@ public class ViewStudentMain extends AppCompatActivity {
         this.viewStdEditDialogClass = new ViewStdEditDialogClass(this);
         this.viewStdDeleteDialogClass = new ViewStdDeleteDialogClass(this);
     }
-    private void rcViewAndAdapterSettings() {
+    private void rcViewAndAdapterSettings(){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         this.viewStudentMainViews.viewStdRcView.setLayoutManager(linearLayoutManager);

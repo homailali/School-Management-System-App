@@ -48,7 +48,7 @@
                 android:gravity="center"
                 android:lineSpacingExtra="-10dp"
                 android:text="Name"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@id/nameTv"
                 app:layout_constraintEnd_toEndOf="@id/nameConstraintLayout"
                 app:layout_constraintStart_toStartOf="@id/nameConstraintLayout"
@@ -66,11 +66,9 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@id/nameConstraintLayout"
                 app:layout_constraintEnd_toEndOf="@id/nameConstraintLayout"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@id/nameConstraintLayout"
                 app:layout_constraintTop_toBottomOf="@+id/nameHeadingTv" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/rollNoConstraintLayout"
             android:layout_width="0dp"
@@ -83,7 +81,6 @@
             app:layout_constraintEnd_toEndOf="@id/constraintLayout2"
             app:layout_constraintStart_toEndOf="@+id/nameConstraintLayout"
             app:layout_constraintTop_toBottomOf="@+id/deleteBtn">
-
             <TextView
                 android:id="@+id/rollNoHeadingTv"
                 android:layout_width="0dp"
@@ -92,12 +89,11 @@
                 android:gravity="center"
                 android:lineSpacingExtra="-10dp"
                 android:text="Roll number"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@id/rollNoTv"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/rollNoTv"
                 android:layout_width="0dp"
@@ -112,10 +108,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/rollNoConstraintLayout"
                 app:layout_constraintStart_toStartOf="@+id/rollNoConstraintLayout"
                 app:layout_constraintTop_toBottomOf="@+id/rollNoHeadingTv" />
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/classConstraintLayout"
             android:layout_width="0dp"
@@ -137,7 +130,7 @@
                 android:gravity="center"
                 android:lineSpacingExtra="-10dp"
                 android:text="Class"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@id/classTv"
                 app:layout_constraintEnd_toEndOf="@id/classConstraintLayout"
                 app:layout_constraintStart_toStartOf="@id/classConstraintLayout"
@@ -181,7 +174,7 @@
                 android:gravity="center"
                 android:lineSpacingExtra="-10dp"
                 android:text="Contact number"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@id/contactNumberTv"
                 app:layout_constraintEnd_toEndOf="@id/contactNumberConstraintLayout"
                 app:layout_constraintStart_toStartOf="@id/contactNumberConstraintLayout"
