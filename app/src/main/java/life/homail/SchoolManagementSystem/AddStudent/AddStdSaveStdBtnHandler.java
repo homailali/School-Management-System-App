@@ -33,7 +33,7 @@ public class AddStdSaveStdBtnHandler implements View.OnClickListener{
         if (bool) {
             this.clearDataFromFields();
             this.makeToast("Student saved successfully");
-            SingleTon.getSingleTon().getStudentModelArrayList().add(studentModel);
+            SingleTon.getSingleTon().setStudentModelArrayList(SingleTon.getSingleTon().getHomeMain().homeStudentsDb.getAllStudentsData());
         } else this.onError("Could not save student");
     }
 

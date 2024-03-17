@@ -27,7 +27,7 @@ public class AddTeacSaveTeacBtnHandler implements View.OnClickListener{
         if (bool){
             this.makeEveryEdEmpty();
             this.makeToast("Teacher saved successfully");
-            SingleTon.getSingleTon().getTeacherModelArrayList().add(teacherModel);
+            SingleTon.getSingleTon().setTeacherModelArrayList(SingleTon.getSingleTon().getHomeMain().homeTeachersDb.getAllTeachers());
         } else this.makeToast("Could not save teacher");
     }
     private void makeEveryEdEmpty(){

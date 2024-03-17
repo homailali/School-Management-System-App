@@ -2,6 +2,7 @@ package life.homail.SchoolManagementSystem.ViewStudents;
 
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,6 +12,7 @@ public class ViewStudentMainViews {
     private ViewStudentMain viewStudentMain;
     protected Button searchByBtn;
     protected EditText searchStdEd;
+    protected TextView noStudentsTv;
     protected RecyclerView viewStdRcView;
 
 
@@ -24,6 +26,7 @@ public class ViewStudentMainViews {
         this.searchByBtn=this.viewStudentMain.findViewById(R.id.searchByBtn);
         this.viewStdRcView=this.viewStudentMain.findViewById(R.id.viewStdRcView);
         this.searchStdEd=this.viewStudentMain.findViewById(R.id.searchStdEd);
+        this.noStudentsTv=this.viewStudentMain.findViewById(R.id.noStudentsTv);
     }
     private void setEventHandlers(){
         this.searchByBtn.setOnClickListener(this.viewStudentMain.searchByBtnHandler);

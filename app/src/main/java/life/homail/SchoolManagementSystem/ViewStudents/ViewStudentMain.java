@@ -1,16 +1,18 @@
 package life.homail.SchoolManagementSystem.ViewStudents;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import life.homail.SchoolManagementSystem.R;
+import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
 
 public class ViewStudentMain extends AppCompatActivity {
-    protected String currentSearchBySelection = "roll Number";
     protected SearchByBtnHandler searchByBtnHandler;
     protected ViewStudentMainViews viewStudentMainViews;
     protected ViewStdEditDialogClass viewStdEditDialogClass;
+    protected String currentSearchBySelection = "roll Number";
     protected ViewStdDeleteDialogClass viewStdDeleteDialogClass;
     protected SearchStdEdTextChangeListener searchStdEdTextChangeListener;
     protected ViewStdAdapter viewStdAdapter = new ViewStdAdapter(this);
@@ -26,19 +28,23 @@ public class ViewStudentMain extends AppCompatActivity {
 
     private void atEndOfOnCreate() {
         this.createSomeObjects();
-        this.setUpDialogsClasses();
         this.rcViewAndAdapterSettings();
+        this.setNoStdTvVisibility("No students added");
     }
 
+
+    protected void setNoStdTvVisibility(String tvText){
+        this.viewStudentMainViews.noStudentsTv.setText(tvText);
+        boolean bool=SingleTon.getSingleTon().getStudentModelArrayList().size()==0;
+        this.viewStudentMainViews.noStudentsTv.setVisibility(bool?View.VISIBLE:View.INVISIBLE);
+//      SingleTon.getSingleTon().getStudentModelArrayList().size() == 0 ? this.viewStudentMainViews.noStudentsTv.setVisibility(View.VISIBLE) : this.viewStudentMainViews.noStudentsTv.setVisibility(View.INVISIBLE);
+    }
 
 
     private void createSomeObjects(){
         this.searchByBtnHandler=new SearchByBtnHandler(this);
         this.searchStdEdTextChangeListener =new SearchStdEdTextChangeListener(this);
         this.viewStudentMainViews=new ViewStudentMainViews(this);
-    }
-
-    private void setUpDialogsClasses() {
         this.viewStdEditDialogClass = new ViewStdEditDialogClass(this);
         this.viewStdDeleteDialogClass = new ViewStdDeleteDialogClass(this);
     }
