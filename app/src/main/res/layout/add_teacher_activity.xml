@@ -16,21 +16,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <Button
             android:id="@+id/teacherGoBackBtn"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-2dp"
-            android:drawableRight="@drawable/back_drawable"
-            android:paddingStart="0dp"
-            android:paddingTop="0dp"
-            android:paddingEnd="15dp"
-            android:paddingBottom="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="-3dp"
             android:backgroundTint="@color/btnBgColor"
+            android:drawableTop="@drawable/back_drawable"
+            android:paddingStart="22dp"
+            android:paddingTop="9dp"
+            android:paddingEnd="25dp"
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toStartOf="@+id/teacherDataFormTv"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/teacherDataFormTv"
+            app:layout_constraintTop_toTopOf="parent"
             app:rippleColor="@color/btnHoverColor" />
         <TextView
             android:id="@+id/teacherDataFormTv"

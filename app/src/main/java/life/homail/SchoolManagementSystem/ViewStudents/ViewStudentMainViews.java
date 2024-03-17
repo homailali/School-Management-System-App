@@ -7,10 +7,12 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import life.homail.SchoolManagementSystem.R;
+import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
 
 public class ViewStudentMainViews {
     private ViewStudentMain viewStudentMain;
     protected Button searchByBtn;
+    protected Button goBackBtn;
     protected EditText searchStdEd;
     protected TextView noStudentsTv;
     protected RecyclerView viewStdRcView;
@@ -27,9 +29,13 @@ public class ViewStudentMainViews {
         this.viewStdRcView=this.viewStudentMain.findViewById(R.id.viewStdRcView);
         this.searchStdEd=this.viewStudentMain.findViewById(R.id.searchStdEd);
         this.noStudentsTv=this.viewStudentMain.findViewById(R.id.noStudentsTv);
+        this.goBackBtn=this.viewStudentMain.findViewById(R.id.goBackBtn);
     }
     private void setEventHandlers(){
         this.searchByBtn.setOnClickListener(this.viewStudentMain.searchByBtnHandler);
         this.searchStdEd.addTextChangedListener(this.viewStudentMain.searchStdEdTextChangeListener);
+        this.goBackBtn.setOnClickListener(e->{
+            this.viewStudentMain.onBackPressed();
+        });
     }
 }
