@@ -3,9 +3,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import life.homail.SchoolManagementSystem.R;
 public class ViewTeachersMainViews {
     protected TextView noTeacherTv;
+    protected RecyclerView viewTeacherRcView;
     protected EditText viewTeacherSearchEd;
     protected Button viewTeachersGoBackBtn;
     protected Button viewTeachersSearchByBtn;
@@ -17,6 +20,7 @@ public class ViewTeachersMainViews {
     }
     private void initializeViews(){
         this.noTeacherTv=this.viewTeachersMain.findViewById(R.id.noTeacherTv);
+        this.viewTeacherRcView=this.viewTeachersMain.findViewById(R.id.viewTeacherRcView);
         this.viewTeacherSearchEd=this.viewTeachersMain.findViewById(R.id.viewTeacherSearchEd);
         this.viewTeachersGoBackBtn=this.viewTeachersMain.findViewById(R.id.viewTeacherGoBackBtn);
         this.viewTeachersSearchByBtn=this.viewTeachersMain.findViewById(R.id.viewTeacherSearchByBtn);

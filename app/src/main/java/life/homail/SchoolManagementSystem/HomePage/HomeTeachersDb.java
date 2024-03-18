@@ -78,7 +78,7 @@ public class HomeTeachersDb extends SQLiteOpenHelper {
     }
     public boolean deleteTeacher(TeacherModel teacherModel){
         SQLiteDatabase sqLiteDatabase=super.getWritableDatabase();
-        long temp=sqLiteDatabase.delete(TABLE_NAME,TEACHER_ID_COLUMN,new String[]{String.valueOf(teacherModel.getTeacherId())});
+        long temp=sqLiteDatabase.delete(TABLE_NAME,TEACHER_ID_COLUMN+"=?",new String[]{String.valueOf(teacherModel.getTeacherId())});
         sqLiteDatabase.close();
         return temp!=0;
     }

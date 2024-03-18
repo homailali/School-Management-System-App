@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout1"
-    android:paddingStart="10dp"
-    android:paddingEnd="10dp"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:paddingStart="10dp"
+    android:paddingTop="5dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
@@ -21,9 +20,11 @@
         android:paddingTop="5dp"
         android:paddingEnd="15dp"
         android:paddingBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <Button
             android:id="@+id/viewTeachersEditBtn"
             android:layout_width="50dp"
@@ -35,6 +36,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:rippleColor="@color/btnHoverColor" />
+
         <Button
             android:id="@+id/viewTeachersDeleteBtn"
             android:layout_width="50dp"
@@ -46,6 +48,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:rippleColor="@color/btnHoverColor" />
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -72,6 +75,7 @@
             app:layout_constraintEnd_toStartOf="@id/viewTeachersIdConstraintLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/viewTeachersEditBtn">
+
             <TextView
                 android:id="@+id/viewTeachersNameHeadingTv"
                 android:layout_width="0dp"
@@ -86,6 +90,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/viewTeachersNameTv"
                 android:layout_width="0dp"
@@ -100,6 +105,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/viewTeachersNameHeadingTv" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/viewTeachersIdConstraintLayout"
             android:layout_width="0dp"
@@ -112,6 +118,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/viewTeachersNameConstraintLayout"
             app:layout_constraintTop_toBottomOf="@+id/viewTeachersDeleteBtn">
+
             <TextView
                 android:id="@+id/viewTeachersIdHeadingTv"
                 android:layout_width="0dp"
@@ -126,6 +133,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/viewTeachersIdTv"
                 android:layout_width="0dp"

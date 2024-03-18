@@ -25,7 +25,7 @@ public class ViewStdDeleteDialogClass {
 
     private void setUpDialog(){
         this.deleteDialog=new Dialog(this.viewStudentMain);
-        this.deleteDialog.setContentView(R.layout.view_std_delete_dialog);
+        this.deleteDialog.setContentView(R.layout.view_std_teacher_delete_dialog);
         this.deleteDialog.setCancelable(false);
     }
 

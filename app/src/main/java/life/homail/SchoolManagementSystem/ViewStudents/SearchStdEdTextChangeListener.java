@@ -1,7 +1,6 @@
 package life.homail.SchoolManagementSystem.ViewStudents;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -44,7 +43,7 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
             }
         }
         SingleTon.getSingleTon().setStudentModelArrayList(searchedArrayList);
-        this.viewStudentMain.viewStdAdapter.notifyDataSetChanged();
+        this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
     }
     private void searchByName(String nameEnteredInEd){
         nameEnteredInEd=nameEnteredInEd.toLowerCase();
@@ -56,7 +55,7 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
             }
         }
         SingleTon.getSingleTon().setStudentModelArrayList(searchedArrayList);
-        this.viewStudentMain.viewStdAdapter.notifyDataSetChanged();
+        this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
     }
     private void searchByRollNumber(String rollNoEnteredInEd){
         ArrayList<StudentModel> searchedArrList=new ArrayList<>();
@@ -67,7 +66,7 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
             }
         }
         SingleTon.getSingleTon().setStudentModelArrayList(searchedArrList);
-        this.viewStudentMain.viewStdAdapter.notifyDataSetChanged();
+        this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
     }
     private void searchByContactNumber(String contactNumberEnteredInEd){
         ArrayList<StudentModel> searchedArrList=new ArrayList<>();
@@ -78,10 +77,10 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
             }
         }
         SingleTon.getSingleTon().setStudentModelArrayList(searchedArrList);
-        this.viewStudentMain.viewStdAdapter.notifyDataSetChanged();
+        this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
     }
     private void setAllStudents(){
         SingleTon.getSingleTon().setStudentModelArrayList(SingleTon.getSingleTon().getHomeMain().homeStudentsDb.getAllStudentsData());
-        this.viewStudentMain.viewStdAdapter.notifyDataSetChanged();
+        this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
     }
 }

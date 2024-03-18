@@ -12,7 +12,7 @@ public class ViewStudentMain extends AppCompatActivity {
     protected String currentSearchBySelection = "roll Number";
     protected ViewStdDeleteDialogClass viewStdDeleteDialogClass;
     protected SearchStdEdTextChangeListener searchStdEdTextChangeListener;
-    protected ViewStdAdapter viewStdAdapter = new ViewStdAdapter(this);
+    protected StudentsViewStdAdapter studentsViewStdAdapter = new StudentsViewStdAdapter(this);
     protected ViewStdEditBtnHandler viewStdEditBtnHandler = new ViewStdEditBtnHandler(this);
     protected ViewStdDeleteBtnHandler viewStdDeleteBtnHandler = new ViewStdDeleteBtnHandler(this);
     @Override
@@ -50,6 +50,6 @@ public class ViewStudentMain extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         this.viewStudentMainViews.viewStdRcView.setLayoutManager(linearLayoutManager);
-        this.viewStudentMainViews.viewStdRcView.setAdapter(this.viewStdAdapter);
+        this.viewStudentMainViews.viewStdRcView.setAdapter(this.studentsViewStdAdapter);
     }
 }

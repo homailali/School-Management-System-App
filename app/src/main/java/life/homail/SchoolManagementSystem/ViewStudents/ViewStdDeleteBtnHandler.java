@@ -18,7 +18,7 @@ public class ViewStdDeleteBtnHandler {
         if (bool){
             MyToast.makeToast("Student deleted successfully",this.viewStudentMain);
             SingleTon.getSingleTon().setStudentModelArrayList(SingleTon.getSingleTon().getHomeMain().homeStudentsDb.getAllStudentsData());
-            this.viewStudentMain.viewStdAdapter.notifyDataSetChanged();
+            this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
             this.viewStudentMain.viewStdDeleteDialogClass.getDeleteDialog().dismiss();
             this.viewStudentMain.setNoStdTvVisibility("No students added");
         } else MyToast.makeToast("Student could not be deleted",this.viewStudentMain);
