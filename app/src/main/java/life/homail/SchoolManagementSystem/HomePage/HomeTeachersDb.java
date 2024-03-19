@@ -37,7 +37,7 @@ public class HomeTeachersDb extends SQLiteOpenHelper {
                 +TEACHER_ID_COLUMN+" integer primary key,"
                 +TEACHER_FULL_NAME_COLUMN+" text ,"
                 +TEACHER_FIRST_NAME_COLUMN+" text,"
-                +TEACHER_LAST_NAME_COLUMN+"text,"
+                +TEACHER_LAST_NAME_COLUMN+" text,"
                 +TEACHER_SUBJECT_COLUMN+" text ,"
                 +TEACHER_PHONE_NUMBER_COLUMN+" text "
                 +")";
@@ -48,8 +48,10 @@ public class HomeTeachersDb extends SQLiteOpenHelper {
     public boolean addTeacher(TeacherModel teacherModel){
         SQLiteDatabase sqLiteDatabase=super.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
-        contentValues.put(TEACHER_FULL_NAME_COLUMN,teacherModel.getTeacherFullName());
         contentValues.put(TEACHER_ID_COLUMN,teacherModel.getTeacherId());
+        contentValues.put(TEACHER_FULL_NAME_COLUMN,teacherModel.getTeacherFullName());
+        contentValues.put(TEACHER_FIRST_NAME_COLUMN,teacherModel.getTeacherFirstName());
+        contentValues.put(TEACHER_LAST_NAME_COLUMN,teacherModel.getTeacherLastName());
         contentValues.put(TEACHER_SUBJECT_COLUMN,teacherModel.getTeacherSubject());
         contentValues.put(TEACHER_PHONE_NUMBER_COLUMN,teacherModel.getTeacherPhoneNumber());
         long temp=sqLiteDatabase.insert(TABLE_NAME,null,contentValues);

@@ -18,6 +18,22 @@ public class TeacherModel {
         this.teacherPhoneNumber = teacherPhoneNumber;
     }
 
+
+
+
+
+    public boolean equals(TeacherModel newTeacherModel){
+        return
+                newTeacherModel.getTeacherFirstName().equals(this.getTeacherFirstName()) &&
+                newTeacherModel.getTeacherLastName().equals(this.getTeacherLastName()) &&
+                newTeacherModel.getTeacherFullName().equals(this.getTeacherFullName()) &&
+                newTeacherModel.getTeacherId()==this.getTeacherId() &&
+                newTeacherModel.getTeacherSubject().equals(this.getTeacherSubject()) &&
+                newTeacherModel.getTeacherPhoneNumber().equals(this.getTeacherPhoneNumber())
+        ;
+    }
+
+
     public String getTeacherFullName() {
         return teacherFullName;
     }

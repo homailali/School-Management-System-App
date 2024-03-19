@@ -44,7 +44,8 @@ public class ViewTeachersMain extends AppCompatActivity{
 
     private void createSomeObjects(){
         this.viewTeachersMainViews=new ViewTeachersMainViews(this);
-        this.viewTeachersDeleteDialogClass =new ViewTeachersDeleteDialogClass(this);
+        this.viewTeachersEditDialogClass=new ViewTeachersEditDialogClass(this);
+        this.viewTeachersDeleteDialogClass=new ViewTeachersDeleteDialogClass(this);
     }
     protected void setNoTeacherTvVisibility(String noTeacherTvText){
         this.viewTeachersMainViews.noTeacherTv.setText(noTeacherTvText);

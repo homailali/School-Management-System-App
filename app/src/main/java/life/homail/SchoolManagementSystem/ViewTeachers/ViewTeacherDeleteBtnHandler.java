@@ -19,7 +19,7 @@ public class ViewTeacherDeleteBtnHandler {
         TeacherModel teacherModel= SingleTon.getSingleTon().getTeacherModelArrayList().get(position);
         boolean bool=SingleTon.getSingleTon().getHomeMain().homeTeachersDb.deleteTeacher(teacherModel);
         if (bool){
-            MyToast.makeToast("Teacher successfully deleted",this.viewTeachersMain);
+            MyToast.makeToast("Teacher deleted successfully",this.viewTeachersMain);
             SingleTon.getSingleTon().setTeacherModelArrayList(SingleTon.getSingleTon().getHomeMain().homeTeachersDb.getAllTeachers());
             this.viewTeachersMain.viewTeachersAdapter.notifyDataSetChanged();
             this.viewTeachersMain.setNoTeacherTvVisibility("No teacher added");
