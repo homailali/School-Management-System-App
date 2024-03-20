@@ -9,12 +9,15 @@ import life.homail.SchoolManagementSystem.R;
 import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
 
 public class ViewTeachersMain extends AppCompatActivity{
+    protected String currentSearchSelectedOption="id";
     protected ViewTeachersMainViews viewTeachersMainViews;
+    protected TeachersSearchByBtnHandler teachersSearchByBtnHandler;
     protected ViewTeachersEditDialogClass viewTeachersEditDialogClass;
     protected ViewTeachersDeleteDialogClass viewTeachersDeleteDialogClass;
     protected ViewTeachersAdapter viewTeachersAdapter=new ViewTeachersAdapter(this);
     protected ViewTeacherEditBtnHandler viewTeacherEditBtnHandler=new ViewTeacherEditBtnHandler(this);
     protected ViewTeacherDeleteBtnHandler viewTeacherDeleteBtnHandler=new ViewTeacherDeleteBtnHandler(this);
+    protected TeacherSearchEdTextChangedListener teacherSearchEdTextChangedListener=new TeacherSearchEdTextChangedListener(this);
     @Override
     public void onCreate(Bundle getCodeFromParent){
         super.onCreate(getCodeFromParent);
@@ -44,6 +47,7 @@ public class ViewTeachersMain extends AppCompatActivity{
 
     private void createSomeObjects(){
         this.viewTeachersMainViews=new ViewTeachersMainViews(this);
+        this.teachersSearchByBtnHandler=new TeachersSearchByBtnHandler(this);
         this.viewTeachersEditDialogClass=new ViewTeachersEditDialogClass(this);
         this.viewTeachersDeleteDialogClass=new ViewTeachersDeleteDialogClass(this);
     }

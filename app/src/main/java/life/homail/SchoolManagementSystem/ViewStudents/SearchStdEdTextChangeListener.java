@@ -25,6 +25,7 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
         this.setAllStudents();
         if (!String.valueOf(editable).isBlank()) this.searchStudents(editableStr);
         this.viewStudentMain.setNoStdTvVisibility("No student found");
+        this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
     }
     private void searchStudents(String editableStr){
         switch (this.viewStudentMain.currentSearchBySelection.toLowerCase()) {
@@ -35,15 +36,15 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
         }
     }
     private void searchByClass(String classEnteredInEd){
+        classEnteredInEd=classEnteredInEd.toLowerCase();
         ArrayList<StudentModel> searchedArrayList=new ArrayList<>();
         ArrayList<StudentModel> studentModelsArr=new ArrayList<>(SingleTon.getSingleTon().getStudentModelArrayList());
         for (StudentModel stdModel : studentModelsArr) {
-            if (stdModel.getStudentClassName().contains(classEnteredInEd)) {
+            if (stdModel.getStudentClassName().toLowerCase().contains(classEnteredInEd)) {
                 searchedArrayList.add(stdModel);
             }
         }
         SingleTon.getSingleTon().setStudentModelArrayList(searchedArrayList);
-        this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
     }
     private void searchByName(String nameEnteredInEd){
         nameEnteredInEd=nameEnteredInEd.toLowerCase();
@@ -55,7 +56,6 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
             }
         }
         SingleTon.getSingleTon().setStudentModelArrayList(searchedArrayList);
-        this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
     }
     private void searchByRollNumber(String rollNoEnteredInEd){
         ArrayList<StudentModel> searchedArrList=new ArrayList<>();
@@ -66,7 +66,6 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
             }
         }
         SingleTon.getSingleTon().setStudentModelArrayList(searchedArrList);
-        this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
     }
     private void searchByContactNumber(String contactNumberEnteredInEd){
         ArrayList<StudentModel> searchedArrList=new ArrayList<>();
@@ -77,10 +76,8 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
             }
         }
         SingleTon.getSingleTon().setStudentModelArrayList(searchedArrList);
-        this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
     }
     private void setAllStudents(){
         SingleTon.getSingleTon().setStudentModelArrayList(SingleTon.getSingleTon().getHomeMain().homeStudentsDb.getAllStudentsData());
-        this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
     }
 }

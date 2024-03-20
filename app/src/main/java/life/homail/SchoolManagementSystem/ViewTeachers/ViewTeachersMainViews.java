@@ -29,5 +29,9 @@ public class ViewTeachersMainViews {
         this.viewTeachersGoBackBtn.setOnClickListener(e->{
             this.viewTeachersMain.onBackPressed();
         });
+        this.viewTeachersSearchByBtn.setOnClickListener(e->{
+            this.viewTeachersMain.teachersSearchByBtnHandler.getTeacherSearchByDialog().show();
+        });
+        this.viewTeacherSearchEd.addTextChangedListener(this.viewTeachersMain.teacherSearchEdTextChangedListener);
     }
 }

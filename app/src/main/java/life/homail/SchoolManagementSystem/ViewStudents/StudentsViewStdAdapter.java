@@ -30,7 +30,6 @@ public class StudentsViewStdAdapter extends RecyclerView.Adapter<StudentsMyViewH
                 return true;
             }
         });
-
     }
     @Override
     public void onBindViewHolder(StudentsMyViewHolder studentsMyViewHolder, int position) {

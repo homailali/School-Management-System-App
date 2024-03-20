@@ -18,10 +18,10 @@ public class TeachersMyViewHolder extends RecyclerView.ViewHolder {
     private TextView viewTeachersIdTv;
     private TextView viewTeachersSubjectTv;
     private TextView viewTeachersPhoneNumberTv;
-    private ConstraintLayout viewTeachersNameConstraintLayout;
-    private ConstraintLayout viewTeachersIdConstraintLayout;
-    private ConstraintLayout viewTeachersSubjectConstraintLayout;
-    private ConstraintLayout viewTeachersPhoneNumberConstraintLayout;
+    private ConstraintLayout teachersNameConstraintLayout;
+    private ConstraintLayout teachersIdConstraintLayout;
+    private ConstraintLayout teachersSubjectConstraintLayout;
+    private ConstraintLayout teachersPhoneNumberConstraintLayout;
 
 
 
@@ -40,10 +40,10 @@ public class TeachersMyViewHolder extends RecyclerView.ViewHolder {
         this.viewTeachersSubjectTv=itemView.findViewById(R.id.viewTeachersSubjectTv);
         this.viewTeachersPhoneNumberTv=itemView.findViewById(R.id.viewTeachersPhoneNumberTv);
 
-        this.viewTeachersNameConstraintLayout=itemView.findViewById(R.id.nameConstraintLayout);
-        this.viewTeachersIdConstraintLayout=itemView.findViewById(R.id.viewTeachersIdConstraintLayout);
-        this.viewTeachersSubjectConstraintLayout=itemView.findViewById(R.id.viewTeachersSubjectConstraintLayout);
-        this.viewTeachersPhoneNumberConstraintLayout=itemView.findViewById(R.id.viewTeachersPhoneNumberConstraintLayout);
+        this.teachersNameConstraintLayout=itemView.findViewById(R.id.viewTeachersNameConstraintLayout);
+        this.teachersIdConstraintLayout=itemView.findViewById(R.id.viewTeachersIdConstraintLayout);
+        this.teachersSubjectConstraintLayout=itemView.findViewById(R.id.viewTeachersSubjectConstraintLayout);
+        this.teachersPhoneNumberConstraintLayout=itemView.findViewById(R.id.viewTeachersPhoneNumberConstraintLayout);
     }
 
     public Button getViewTeachersEditBtn() {
@@ -94,35 +94,35 @@ public class TeachersMyViewHolder extends RecyclerView.ViewHolder {
         this.viewTeachersPhoneNumberTv = viewTeachersPhoneNumberTv;
     }
 
-    public ConstraintLayout getViewTeachersNameConstraintLayout() {
-        return viewTeachersNameConstraintLayout;
+    public ConstraintLayout getTeachersNameConstraintLayout() {
+        return teachersNameConstraintLayout;
     }
 
-    public void setViewTeachersNameConstraintLayout(ConstraintLayout viewTeachersNameConstraintLayout) {
-        this.viewTeachersNameConstraintLayout = viewTeachersNameConstraintLayout;
+    public void setTeachersNameConstraintLayout(ConstraintLayout teachersNameConstraintLayout) {
+        this.teachersNameConstraintLayout = teachersNameConstraintLayout;
     }
 
-    public ConstraintLayout getViewTeachersIdConstraintLayout() {
-        return viewTeachersIdConstraintLayout;
+    public ConstraintLayout getTeachersIdConstraintLayout() {
+        return teachersIdConstraintLayout;
     }
 
-    public void setViewTeachersIdConstraintLayout(ConstraintLayout viewTeachersIdConstraintLayout) {
-        this.viewTeachersIdConstraintLayout = viewTeachersIdConstraintLayout;
+    public void setTeachersIdConstraintLayout(ConstraintLayout teachersIdConstraintLayout) {
+        this.teachersIdConstraintLayout = teachersIdConstraintLayout;
     }
 
-    public ConstraintLayout getViewTeachersSubjectConstraintLayout() {
-        return viewTeachersSubjectConstraintLayout;
+    public ConstraintLayout getTeachersSubjectConstraintLayout() {
+        return teachersSubjectConstraintLayout;
     }
 
-    public void setViewTeachersSubjectConstraintLayout(ConstraintLayout viewTeachersSubjectConstraintLayout) {
-        this.viewTeachersSubjectConstraintLayout = viewTeachersSubjectConstraintLayout;
+    public void setTeachersSubjectConstraintLayout(ConstraintLayout teachersSubjectConstraintLayout) {
+        this.teachersSubjectConstraintLayout = teachersSubjectConstraintLayout;
     }
 
-    public ConstraintLayout getViewTeachersPhoneNumberConstraintLayout() {
-        return viewTeachersPhoneNumberConstraintLayout;
+    public ConstraintLayout getTeachersPhoneNumberConstraintLayout() {
+        return teachersPhoneNumberConstraintLayout;
     }
 
-    public void setViewTeachersPhoneNumberConstraintLayout(ConstraintLayout viewTeachersPhoneNumberConstraintLayout) {
-        this.viewTeachersPhoneNumberConstraintLayout = viewTeachersPhoneNumberConstraintLayout;
+    public void setTeachersPhoneNumberConstraintLayout(ConstraintLayout teachersPhoneNumberConstraintLayout) {
+        this.teachersPhoneNumberConstraintLayout = teachersPhoneNumberConstraintLayout;
     }
 }
