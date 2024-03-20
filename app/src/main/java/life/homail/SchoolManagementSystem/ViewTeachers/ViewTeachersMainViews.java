@@ -26,12 +26,8 @@ public class ViewTeachersMainViews {
         this.viewTeachersSearchByBtn=this.viewTeachersMain.findViewById(R.id.viewTeacherSearchByBtn);
     }
     private void setEventHandlers(){
-        this.viewTeachersGoBackBtn.setOnClickListener(e->{
-            this.viewTeachersMain.onBackPressed();
-        });
-        this.viewTeachersSearchByBtn.setOnClickListener(e->{
-            this.viewTeachersMain.teachersSearchByBtnHandler.getTeacherSearchByDialog().show();
-        });
+        this.viewTeachersGoBackBtn.setOnClickListener(e-> this.viewTeachersMain.onBackPressed());
+        this.viewTeachersSearchByBtn.setOnClickListener(e-> this.viewTeachersMain.teachersSearchByBtnHandler.onSearchByBtnClick());
         this.viewTeacherSearchEd.addTextChangedListener(this.viewTeachersMain.teacherSearchEdTextChangedListener);
     }
 }

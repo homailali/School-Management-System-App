@@ -48,23 +48,16 @@ public class SearchByBtnHandler implements View.OnClickListener{
         this.searchByContactNumberBtn=this.searchByDialog.findViewById(R.id.searchByContactNumberBtn);
     }
     private void setEventHandlersForDialogViews(){
-        this.searchByNameBtn.setOnClickListener(e->{
-            this.dialogViewsHandler("Search by name","name",InputType.TYPE_CLASS_TEXT);
-        });
-        this.searchByClassBtn.setOnClickListener(e->{
-            this.dialogViewsHandler("Search by class","class",InputType.TYPE_CLASS_TEXT);
-        });
-        this.searchByRollNoBtn.setOnClickListener(e->{
-            this.dialogViewsHandler("Search by roll no","roll number",InputType.TYPE_CLASS_NUMBER);
-        });
-        this.searchByContactNumberBtn.setOnClickListener(e->{
-            this.dialogViewsHandler("Search by contact no","contact number",InputType.TYPE_CLASS_NUMBER);
-        });
+        this.searchByNameBtn.setOnClickListener(e-> this.dialogViewsHandler("Search by name","name",InputType.TYPE_CLASS_TEXT));
+        this.searchByClassBtn.setOnClickListener(e-> this.dialogViewsHandler("Search by class","class",InputType.TYPE_CLASS_TEXT));
+        this.searchByRollNoBtn.setOnClickListener(e-> this.dialogViewsHandler("Search by roll no","roll number",InputType.TYPE_CLASS_NUMBER));
+        this.searchByContactNumberBtn.setOnClickListener(e-> this.dialogViewsHandler("Search by contact no","contact number",InputType.TYPE_CLASS_NUMBER));
     }
     private void dialogViewsHandler(String edHintText,String currentSearchBySelection,int inputType){
+        this.searchByDialog.dismiss();
+        this.viewStudentMain.viewStudentMainViews.searchStdEd.setText(null);
+        this.viewStudentMain.currentSearchBySelection=currentSearchBySelection;
         this.viewStudentMain.viewStudentMainViews.searchStdEd.setHint(edHintText);
         this.viewStudentMain.viewStudentMainViews.searchStdEd.setInputType(inputType);
-        this.viewStudentMain.currentSearchBySelection=currentSearchBySelection;
-        this.searchByDialog.dismiss();
     }
 }

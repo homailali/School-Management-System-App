@@ -20,6 +20,13 @@ public class TeachersSearchByBtnHandler {
         this.viewTeachersMain = viewTeachersMain;
         this.setUpDialog();
     }
+
+    protected void onSearchByBtnClick(){
+        this.viewTeachersMain.teachersSearchByBtnHandler.getTeacherSearchByDialog().show();
+    }
+
+
+
     private void setUpDialog(){
         this.initialSettings();
         this.initializeViews();
@@ -43,10 +50,11 @@ public class TeachersSearchByBtnHandler {
         this.teacherSearchByPhoneNumberBtn.setOnClickListener(e-> this.onOptionClick("phone number",InputType.TYPE_CLASS_NUMBER));
     }
     private void onOptionClick(String clickedOption,int inputType){
+        this.getTeacherSearchByDialog().dismiss();
         this.viewTeachersMain.currentSearchSelectedOption=clickedOption;
+        this.viewTeachersMain.viewTeachersMainViews.viewTeacherSearchEd.setText(null);
         this.viewTeachersMain.viewTeachersMainViews.viewTeacherSearchEd.setInputType(inputType);
         this.viewTeachersMain.viewTeachersMainViews.viewTeacherSearchEd.setHint("Search by "+clickedOption);
-        this.getTeacherSearchByDialog().dismiss();
     }
     public Dialog getTeacherSearchByDialog() {
         return teacherSearchByDialog;
