@@ -51,4 +51,36 @@ public class HomeMain extends AppCompatActivity {
         super.onStart();
         this.homePageViews.setStudentsAndTeachersCountOnTv();
     }
+
+    public String getPrincipalName() {
+        return principalName;
+    }
+
+    public void setPrincipalName(String principalName) {
+        this.principalName = principalName;
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+    }
+
+    public String getInstitutionName() {
+        return institutionName;
+    }
+
+    public void setInstitutionName(String institutionName) {
+        this.institutionName = institutionName;
+    }
+
+    public String getInstitutionLocation() {
+        return institutionLocation;
+    }
+
+    public void setInstitutionLocation(String institutionLocation) {
+        this.institutionLocation = institutionLocation;
+    }
 }

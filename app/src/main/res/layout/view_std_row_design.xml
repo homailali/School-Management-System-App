@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout1"
+    android:id="@+id/topLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:backgroundTint="@color/white"
@@ -21,10 +21,10 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:paddingTop="5dp"
-        app:layout_constraintBottom_toBottomOf="@id/constraintLayout1"
-        app:layout_constraintEnd_toEndOf="@id/constraintLayout1"
-        app:layout_constraintStart_toStartOf="@id/constraintLayout1"
-        app:layout_constraintTop_toTopOf="@id/constraintLayout1"
+        app:layout_constraintBottom_toBottomOf="@id/topLayout"
+        app:layout_constraintEnd_toEndOf="@id/topLayout"
+        app:layout_constraintStart_toStartOf="@id/topLayout"
+        app:layout_constraintTop_toTopOf="@id/topLayout"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout

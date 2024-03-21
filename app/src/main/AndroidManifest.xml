@@ -23,11 +23,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomePage.HomeMain"/>
-        <activity android:name=".InstitutionInfo.InstitutionInfoMain"/>
         <activity android:name=".AddStudent.AddStdMain"/>
         <activity android:name=".AddTeacher.AddTeacherMain"/>
+        <activity android:name=".ProfilePage.ProfilePageMain"/>
         <activity android:name=".ViewStudents.ViewStudentMain"/>
         <activity android:name=".ViewTeachers.ViewTeachersMain"/>
+        <activity android:name=".InstitutionInfo.InstitutionInfoMain"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

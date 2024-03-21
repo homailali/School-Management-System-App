@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import life.homail.SchoolManagementSystem.AddStudent.AddStdMain;
 import life.homail.SchoolManagementSystem.AddTeacher.AddTeacherMain;
+import life.homail.SchoolManagementSystem.ProfilePage.ProfilePageMain;
 import life.homail.SchoolManagementSystem.R;
 import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
 import life.homail.SchoolManagementSystem.ViewStudents.ViewStudentMain;
@@ -15,6 +16,7 @@ import life.homail.SchoolManagementSystem.ViewTeachers.ViewTeachersMain;
 public class HomePageViews {
     // fields
     private HomeMain homeMain;
+    protected Button profileBtn;
     protected Button addStudentBtn;
     protected Button addTeacherBtn;
     protected Button viewStudentsBtn;
@@ -29,6 +31,7 @@ public class HomePageViews {
     }
     // methods
     private void initializeViews(){
+        this.profileBtn=this.homeMain.findViewById(R.id.profileBtn);
         this.addStudentBtn=this.homeMain.findViewById(R.id.addStudentBtn);
         this.addTeacherBtn=this.homeMain.findViewById(R.id.addTeachetBtn);
         this.viewStudentsBtn=this.homeMain.findViewById(R.id.viewStudentsBtn);
@@ -48,6 +51,9 @@ public class HomePageViews {
         });
         this.viewTeachersBtn.setOnClickListener(e->{
             this.changeIntent(ViewTeachersMain.class);
+        });
+        this.profileBtn.setOnClickListener(e->{
+            this.changeIntent(ProfilePageMain.class);
         });
     }
 

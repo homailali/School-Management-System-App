@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topLayout"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:backgroundTint="@color/backgroundColor"
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/backgroundColor"
+                android:fontFamily="@font/baloo_bhai_2_bold"
+                android:gravity="center"
+                android:lineSpacingExtra="-15dp"
+                android:text="About institution"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/infoLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="-50dp"
+            android:layout_marginEnd="20dp"
+            android:elevation="40dp"
+            android:background="@drawable/all_rounded_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topLayout">
+            <TextView
+                android:id="@+id/institutionNameHeadingTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Institution name"
+                android:fontFamily="@font/baloo_bhai_2_bold"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:lineSpacingExtra="-10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/institutionNameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:lineSpacingExtra="-13sp"
+                android:text="Wings college chakwal"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/institutionNameHeadingTv" />
+
+            <TextView
+                android:id="@+id/principalNameHeadingTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/baloo_bhai_2_bold"
+                android:lineSpacingExtra="-10sp"
+                android:text="Principal name"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/institutionNameTv" />
+            <TextView
+                android:id="@+id/principalNameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:lineSpacingExtra="-13sp"
+                android:text="Malik ibrar haider"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/principalNameHeadingTv" />
+
+            <TextView
+                android:id="@+id/institutionLocationHeadingTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/baloo_bhai_2_bold"
+                android:lineSpacingExtra="-10sp"
+                android:text="Institution location"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/principalNameTv" />
+            <TextView
+                android:id="@+id/institutionLocationTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:lineSpacingExtra="-13sp"
+                android:text="Jehlum road chakwal"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/institutionLocationHeadingTv" />
+
+            <TextView
+                android:id="@+id/contactNumberHeadingTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/baloo_bhai_2_bold"
+                android:lineSpacingExtra="-10sp"
+                android:text="Contact number"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/institutionLocationTv" />
+            <TextView
+                android:id="@+id/contactNumberTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:fontFamily="@font/baloo_bhai_2_medium"
+                android:lineSpacingExtra="-13sp"
+                android:text="03395647243"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contactNumberHeadingTv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/editProfileBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="@color/backgroundColor"
+            android:fontFamily="@font/baloo_bhai_2_medium"
+            android:text="Edit profile"
+            android:textSize="27sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/infoLayout"
+            app:layout_constraintStart_toStartOf="@+id/infoLayout"
+            app:layout_constraintTop_toBottomOf="@+id/infoLayout"
+            app:rippleColor="@color/btnHoverColor" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
