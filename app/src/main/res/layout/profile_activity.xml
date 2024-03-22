@@ -2,6 +2,7 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,10 +17,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
                 android:backgroundTint="@color/backgroundColor"
                 android:fontFamily="@font/baloo_bhai_2_bold"
                 android:gravity="center"
@@ -30,6 +33,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/profilePageGoBackBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="-3dp"
+                android:backgroundTint="@color/backgroundColor"
+                android:drawableTop="@drawable/back_drawable"
+                android:paddingStart="22dp"
+                android:paddingTop="9dp"
+                android:paddingEnd="25dp"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView2"
+                app:rippleColor="@color/btnHoverColor" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/infoLayout"
@@ -151,6 +170,7 @@
             android:layout_marginBottom="15dp"
             android:backgroundTint="@color/backgroundColor"
             android:fontFamily="@font/baloo_bhai_2_medium"
+            android:textColor="@color/white"
             android:text="Edit profile"
             android:textSize="27sp"
             app:cornerRadius="10dp"

@@ -27,7 +27,6 @@
             android:paddingStart="22dp"
             android:paddingTop="9dp"
             android:paddingEnd="25dp"
-            android:shadowColor="@color/btnBgColor"
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toStartOf="@+id/studentDataFormTv"
             app:layout_constraintStart_toStartOf="parent"

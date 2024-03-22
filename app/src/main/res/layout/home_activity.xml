@@ -263,6 +263,5 @@
                 app:layout_constraintTop_toBottomOf="@+id/profileTv"
                 app:rippleColor="@color/btnHoverColor" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

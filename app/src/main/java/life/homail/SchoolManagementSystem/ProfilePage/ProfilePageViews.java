@@ -8,6 +8,7 @@ import life.homail.SchoolManagementSystem.R;
 public class ProfilePageViews {
     private ProfilePageMain profilePageMain;
 
+    private Button goBackBtn;
     private Button editProfileBtn;
     private TextView principalNameTv;
     private TextView contactNumberTv;
@@ -18,14 +19,20 @@ public class ProfilePageViews {
     protected ProfilePageViews(ProfilePageMain profilePageMain) {
         this.profilePageMain = profilePageMain;
         this.initializeViews();
+        this.setEventHandlers();
     }
 
     private void initializeViews(){
+        this.goBackBtn=this.profilePageMain.findViewById(R.id.profilePageGoBackBtn);
         this.editProfileBtn=this.profilePageMain.findViewById(R.id.editProfileBtn);
         this.contactNumberTv=this.profilePageMain.findViewById(R.id.contactNumberTv);
         this.principalNameTv=this.profilePageMain.findViewById(R.id.principalNameTv);
         this.institutionNameTv=this.profilePageMain.findViewById(R.id.institutionNameTv);
         this.institutionLocationTv=this.profilePageMain.findViewById(R.id.institutionLocationTv);
+    }
+    private void setEventHandlers(){
+        this.editProfileBtn.setOnClickListener(e->this.profilePageMain.getEditProfileBtnHandler().editProfileBtnHandlerMain());
+        this.goBackBtn.setOnClickListener(e->this.profilePageMain.finish());
     }
 
     protected TextView getPrincipalNameTv() {
