@@ -24,7 +24,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:background="@drawable/edit_text_bg"
-            android:hint="Search by roll no"
+            android:hint="Search by id"
             android:inputType="number"
             android:paddingStart="15dp"
             android:paddingTop="10dp"

@@ -6,8 +6,8 @@
         <item name="android:statusBarColor">@color/backgroundColor</item>
 
         <item name="android:textColorHighlight">@color/handleAndTextSelectionColor</item>
-        <item name="android:textSelectHandle">@drawable/cursor_handle</item>
-        <item name="android:textSelectHandleLeft">@drawable/cursor_handle</item>
-        <item name="android:textSelectHandleRight">@drawable/cursor_handle</item>
+<!--        <item name="android:textSelectHandle">@drawable/cursor_handle</item>-->
+<!--        <item name="android:textSelectHandleLeft">@drawable/cursor_handle</item>-->
+<!--        <item name="android:textSelectHandleRight">@drawable/cursor_handle</item>-->
     </style>
 </resources>

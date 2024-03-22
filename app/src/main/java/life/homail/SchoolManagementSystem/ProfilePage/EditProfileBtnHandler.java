@@ -1,14 +1,11 @@
 package life.homail.SchoolManagementSystem.ProfilePage;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.view.View;
-
 import life.homail.SchoolManagementSystem.HomePage.HomeMain;
 import life.homail.SchoolManagementSystem.ModelClasses.InstitutionInfoModel;
 import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
 import life.homail.SchoolManagementSystem.SplashScreen.SplashScreenMain;
 import life.homail.SchoolManagementSystem.Toast.MyToast;
-
 public class EditProfileBtnHandler {
     private InstitutionInfoModel oldInstitutionInfoModel;
     private ProfilePageMain profilePageMain;
@@ -20,7 +17,6 @@ public class EditProfileBtnHandler {
         this.profilePageMain.getProfilePageDialogClass().getProfilePageDialog().show();
         this.setTextOnProfilePageDialog();
     }
-
     private void setTextOnProfilePageDialog(){
         oldInstitutionInfoModel=SingleTon.getSingleTon().getHomeMain().getHomeInstitutionInfoModel();
         this.profilePageMain.getProfilePageDialogClass().getDialogInstitutionNameEd().setText(oldInstitutionInfoModel.getInstitutionName());
@@ -28,16 +24,12 @@ public class EditProfileBtnHandler {
         this.profilePageMain.getProfilePageDialogClass().getDialogPrincipalNameEd().setText(oldInstitutionInfoModel.getPrincipalName());
         this.profilePageMain.getProfilePageDialogClass().getDialogContactNumberEd().setText(oldInstitutionInfoModel.getContactNumber());
     }
-
-
     protected void onSaveBtnClick(){
         InstitutionInfoModel newInstitutionInfoModel=this.getNewInstitutionInfoModel();
         String errorStr=getErrorStringText(newInstitutionInfoModel);
         if (errorStr!=null) MyToast.makeToast(errorStr,this.profilePageMain);
         else this.saveInstitutionInfo(newInstitutionInfoModel);
     }
-
-
     private void saveInstitutionInfo(InstitutionInfoModel newInstitutionInfoModel){
         HomeMain homeMain=SingleTon.getSingleTon().getHomeMain();
         this.savingInSharedPref(newInstitutionInfoModel);
@@ -55,17 +47,12 @@ public class EditProfileBtnHandler {
         editor.putString(SplashScreenMain.CONTACT_NUMBER_KEY, newInstitutionInfoModel.getContactNumber());
         editor.apply();
     }
-
-
-
-
     private String getErrorStringText(InstitutionInfoModel newInstitutionInfoModel){
         return
                 oldInstitutionInfoModel.equals(newInstitutionInfoModel)?"Institution info has not been modified":
                 this.ifSomeFieldIsEmpty(newInstitutionInfoModel)?"Fill all fields correctly":
                 null;
     }
-
     private boolean ifSomeFieldIsEmpty(InstitutionInfoModel newInstitutionInfoModel){
         return
                 newInstitutionInfoModel.getInstitutionName().isBlank() ||
@@ -74,7 +61,6 @@ public class EditProfileBtnHandler {
                 newInstitutionInfoModel.getContactNumber().isBlank()
         ;
     }
-
     private InstitutionInfoModel getNewInstitutionInfoModel(){
         ProfilePageDialogClass profilePageDialogClass=this.profilePageMain.getProfilePageDialogClass();
         String principalName=String.valueOf(profilePageDialogClass.getDialogPrincipalNameEd().getText());
