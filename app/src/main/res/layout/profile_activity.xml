@@ -70,8 +70,8 @@
                 android:text="Institution name"
                 android:fontFamily="@font/baloo_bhai_2_bold"
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                android:lineSpacingExtra="-10sp"
+                android:textSize="15sp"
+                android:lineSpacingExtra="-8sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
             <TextView
@@ -80,10 +80,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-5dp"
                 android:fontFamily="@font/baloo_bhai_2_medium"
-                android:lineSpacingExtra="-13sp"
+                android:lineSpacingExtra="-11sp"
                 android:text="Wings college chakwal"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/institutionNameHeadingTv" />
 
@@ -93,10 +93,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/baloo_bhai_2_bold"
-                android:lineSpacingExtra="-10sp"
+                android:lineSpacingExtra="-8sp"
                 android:text="Principal name"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/institutionNameTv" />
             <TextView
@@ -105,10 +105,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-5dp"
                 android:fontFamily="@font/baloo_bhai_2_medium"
-                android:lineSpacingExtra="-13sp"
+                android:lineSpacingExtra="-11sp"
                 android:text="Malik ibrar haider"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/principalNameHeadingTv" />
 
@@ -118,10 +118,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/baloo_bhai_2_bold"
-                android:lineSpacingExtra="-10sp"
+                android:lineSpacingExtra="-8sp"
                 android:text="Institution location"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/principalNameTv" />
             <TextView
@@ -130,10 +130,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-5dp"
                 android:fontFamily="@font/baloo_bhai_2_medium"
-                android:lineSpacingExtra="-13sp"
+                android:lineSpacingExtra="-11sp"
                 android:text="Jehlum road chakwal"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/institutionLocationHeadingTv" />
 
@@ -143,10 +143,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/baloo_bhai_2_bold"
-                android:lineSpacingExtra="-10sp"
+                android:lineSpacingExtra="-8sp"
                 android:text="Contact number"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/institutionLocationTv" />
             <TextView
@@ -155,10 +155,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-5dp"
                 android:fontFamily="@font/baloo_bhai_2_medium"
-                android:lineSpacingExtra="-13sp"
+                android:lineSpacingExtra="-11sp"
                 android:text="03395647243"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/contactNumberHeadingTv" />
         </androidx.constraintlayout.widget.ConstraintLayout>

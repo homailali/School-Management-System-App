@@ -27,6 +27,7 @@ public class SubmitInfoBtnHandler implements View.OnClickListener{
         this.extractDataFromFields();
         if (this.ifSomeDataIsInCorrect()) this.makeToast("Fill all fields correctly");
         else this.ifAllDataIsCorrect();
+        this.institutionInfoMain.finish();
     }
 
     private void ifAllDataIsCorrect(){
