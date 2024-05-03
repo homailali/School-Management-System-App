@@ -44,7 +44,7 @@ public class ViewStdEditBtnHandler{
 
     private void updateStudentsData(StudentModel newStudentModel){
         boolean bool = SingleTon.getSingleTon().getHomeMain().homeStudentsDb.updateStudentData(oldStudentModel, newStudentModel);
-        if (bool) this.ifDataSuccessfullyUpdatedInDb();
+        if (bool) this.ifDataSuccessfullyUpdatedInDb(newStudentModel);
         else MyToast.makeToast("Could not update student's data", this.viewStudentMain);
     }
 
@@ -70,11 +70,12 @@ public class ViewStdEditBtnHandler{
             return null;
         }
     }
-    private void ifDataSuccessfullyUpdatedInDb(){
+    private void ifDataSuccessfullyUpdatedInDb(StudentModel newStdModel){
         MyToast.makeToast("Student data updated successfully",this.viewStudentMain);
         this.viewStudentMain.viewStdEditDialogClass.getEditDialog().dismiss();
-        SingleTon.getSingleTon().setStudentModelArrayList(SingleTon.getSingleTon().getHomeMain().homeStudentsDb.getAllStudentsData());
-        this.viewStudentMain.viewStudentMainViews.viewStdRcView.setAdapter(this.viewStudentMain.studentsViewStdAdapter);
+        SingleTon.getSingleTon().getStudentModelArrayList().set(position,newStdModel);
+        this.viewStudentMain.studentsViewStdAdapter.notifyItemChanged(position);
+
     }
     private boolean ifAnyFieldIsEmpty(StudentModel newStudentModel){
         return newStudentModel.getStudentFirstName().isBlank() ||

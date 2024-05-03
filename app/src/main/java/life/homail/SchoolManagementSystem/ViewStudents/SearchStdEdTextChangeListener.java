@@ -25,7 +25,9 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
         this.setAllStudents();
         if (!String.valueOf(editable).isBlank()) this.searchStudents(editableStr);
         this.viewStudentMain.setNoStdTvVisibility("No student found");
-        this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
+        try {
+            this.viewStudentMain.studentsViewStdAdapter.notifyItemChanged(0, SingleTon.getSingleTon().getStudentModelArrayList().size());
+        } catch (Exception ignore){}
     }
     private void searchStudents(String editableStr){
         switch (this.viewStudentMain.currentSearchBySelection.toLowerCase()) {

@@ -20,7 +20,9 @@ public class TeacherSearchEdTextChangedListener implements TextWatcher {
         this.setAllStudents();
         if (!editableStr.isBlank()) this.searchBasedOnSelectedOption(editableStr);
         this.viewTeachersMain.setNoTeacherTvVisibility("No teacher founded");
-        this.viewTeachersMain.viewTeachersAdapter.notifyDataSetChanged();
+        try {
+            this.viewTeachersMain.viewTeachersAdapter.notifyItemRangeChanged(0, SingleTon.getSingleTon().getTeacherModelArrayList().size());
+        } catch (Exception ignored){}
     }
     private void searchBasedOnSelectedOption(String editableStr){
         switch (this.viewTeachersMain.currentSearchSelectedOption){

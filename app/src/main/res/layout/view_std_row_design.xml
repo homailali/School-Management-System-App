@@ -31,12 +31,10 @@
             android:id="@+id/nameConstraintLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/all_rounded_bg"
             android:padding="15dp"
-            app:layout_constraintBottom_toTopOf="@id/classConstraintLayout"
-            app:layout_constraintEnd_toStartOf="@id/rollNoConstraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editBtn">
 
@@ -69,18 +67,18 @@
                 app:layout_constraintStart_toStartOf="@id/nameConstraintLayout"
                 app:layout_constraintTop_toBottomOf="@+id/nameHeadingTv" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/rollNoConstraintLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/all_rounded_bg"
             android:padding="15dp"
-            app:layout_constraintBottom_toTopOf="@id/contactNumberConstraintLayout"
-            app:layout_constraintEnd_toEndOf="@id/constraintLayout2"
-            app:layout_constraintStart_toEndOf="@+id/nameConstraintLayout"
-            app:layout_constraintTop_toBottomOf="@+id/deleteBtn">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/classConstraintLayout">
+
             <TextView
                 android:id="@+id/rollNoHeadingTv"
                 android:layout_width="0dp"
@@ -94,6 +92,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/rollNoTv"
                 android:layout_width="0dp"
@@ -109,16 +108,15 @@
                 app:layout_constraintStart_toStartOf="@+id/rollNoConstraintLayout"
                 app:layout_constraintTop_toBottomOf="@+id/rollNoHeadingTv" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/classConstraintLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="5dp"
             android:background="@drawable/all_rounded_bg"
             android:padding="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/contactNumberConstraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameConstraintLayout">
 
@@ -156,13 +154,11 @@
             android:id="@+id/contactNumberConstraintLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/all_rounded_bg"
             android:padding="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/classConstraintLayout"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rollNoConstraintLayout">
 
             <TextView
@@ -203,6 +199,7 @@
             android:drawableTop="@drawable/edit_drawable"
             android:paddingTop="9dp"
             app:cornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:rippleColor="@color/btnHoverColor" />
@@ -214,24 +211,11 @@
             android:backgroundTint="@color/backgroundColor"
             android:drawableTop="@drawable/delete_drawable"
             android:paddingTop="9dp"
+            app:layout_constraintStart_toEndOf="@id/editBtn"
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:rippleColor="@color/btnHoverColor" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/backgroundColor"
-            android:fontFamily="@font/baloo_bhai_2_medium"
-            android:text="Edit/Delete"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="@+id/deleteBtn"
-            app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
-            app:layout_constraintStart_toEndOf="@+id/editBtn"
-            app:layout_constraintTop_toTopOf="@+id/editBtn" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

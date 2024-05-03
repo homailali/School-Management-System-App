@@ -76,8 +76,8 @@ public class ViewTeacherEditBtnHandler {
         if (bool){
             MyToast.makeToast("Teacher data updated successfully",this.viewTeachersMain);
             this.viewTeachersMain.viewTeachersEditDialogClass.getViewTeacherDialog().dismiss();
-            SingleTon.getSingleTon().setTeacherModelArrayList(SingleTon.getSingleTon().getHomeMain().homeTeachersDb.getAllTeachers());
-            this.viewTeachersMain.viewTeachersMainViews.viewTeacherRcView.setAdapter(this.viewTeachersMain.viewTeachersAdapter);
+            SingleTon.getSingleTon().getTeacherModelArrayList().set(position,newTeacherModel);
+            this.viewTeachersMain.viewTeachersAdapter.notifyItemChanged(position);
         } else MyToast.makeToast("Could not update teacher's data",this.viewTeachersMain);
     }
 }
