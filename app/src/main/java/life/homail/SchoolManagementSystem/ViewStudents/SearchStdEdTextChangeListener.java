@@ -1,7 +1,9 @@
 package life.homail.SchoolManagementSystem.ViewStudents;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import java.util.ArrayList;
+
 import life.homail.SchoolManagementSystem.ModelClasses.StudentModel;
 import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
 public class SearchStdEdTextChangeListener implements TextWatcher {
@@ -23,7 +25,11 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
         this.setAllStudents();
         if (!String.valueOf(editable).isBlank()) this.searchStudents(editableStr);
         this.viewStudentMain.setNoStdTvVisibility("No student found");
+        // comment start
+        // this is bad approach change it to notify itemRangeInserted
+        // currently i am not able to understand but in future please fix this okay
         this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
+        // comment end
     }
     private void searchStudents(String editableStr){
         switch (this.viewStudentMain.currentSearchBySelection.toLowerCase()) {

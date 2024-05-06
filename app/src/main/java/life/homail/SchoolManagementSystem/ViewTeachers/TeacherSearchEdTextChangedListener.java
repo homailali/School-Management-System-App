@@ -21,7 +21,11 @@ public class TeacherSearchEdTextChangedListener implements TextWatcher {
         this.setAllStudents();
         if (!editableStr.isBlank()) this.searchBasedOnSelectedOption(editableStr);
         this.viewTeachersMain.setNoTeacherTvVisibility("No teacher founded");
+        // comment start
+        // this is bad approach change it to notify itemRangeInserted
+        // currently i am not able to understand but in future please fix this okay
         this.viewTeachersMain.viewTeachersAdapter.notifyDataSetChanged();
+        // comment end
     }
     private void searchBasedOnSelectedOption(String editableStr){
         switch (this.viewTeachersMain.currentSearchSelectedOption){
