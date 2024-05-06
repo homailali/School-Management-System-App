@@ -1,15 +1,13 @@
 package life.homail.SchoolManagementSystem.ViewStudents;
 import android.text.Editable;
 import android.text.TextWatcher;
-
 import java.util.ArrayList;
-
 import life.homail.SchoolManagementSystem.ModelClasses.StudentModel;
 import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
-
 public class SearchStdEdTextChangeListener implements TextWatcher {
     // Fields
     private ViewStudentMain viewStudentMain;
+    private ArrayList<StudentModel> studentArrTemp;
     // Constructor
     protected SearchStdEdTextChangeListener(ViewStudentMain viewStudentMain){
         this.viewStudentMain=viewStudentMain;
@@ -25,9 +23,7 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
         this.setAllStudents();
         if (!String.valueOf(editable).isBlank()) this.searchStudents(editableStr);
         this.viewStudentMain.setNoStdTvVisibility("No student found");
-        try {
-            this.viewStudentMain.studentsViewStdAdapter.notifyItemChanged(0, SingleTon.getSingleTon().getStudentModelArrayList().size());
-        } catch (Exception ignore){}
+        this.viewStudentMain.studentsViewStdAdapter.notifyDataSetChanged();
     }
     private void searchStudents(String editableStr){
         switch (this.viewStudentMain.currentSearchBySelection.toLowerCase()) {
@@ -40,8 +36,7 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
     private void searchByClass(String classEnteredInEd){
         classEnteredInEd=classEnteredInEd.toLowerCase();
         ArrayList<StudentModel> searchedArrayList=new ArrayList<>();
-        ArrayList<StudentModel> studentModelsArr=new ArrayList<>(SingleTon.getSingleTon().getStudentModelArrayList());
-        for (StudentModel stdModel : studentModelsArr) {
+        for (StudentModel stdModel :this.studentArrTemp) {
             if (stdModel.getStudentClassName().toLowerCase().contains(classEnteredInEd)) {
                 searchedArrayList.add(stdModel);
             }
@@ -51,8 +46,7 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
     private void searchByName(String nameEnteredInEd){
         nameEnteredInEd=nameEnteredInEd.toLowerCase();
         ArrayList<StudentModel> searchedArrayList=new ArrayList<>();
-        ArrayList<StudentModel> studentModelsArr=new ArrayList<>(SingleTon.getSingleTon().getStudentModelArrayList());
-        for (StudentModel stdModel : studentModelsArr){
+        for (StudentModel stdModel :this.studentArrTemp){
             if (stdModel.getStudentFullName().toLowerCase().contains(nameEnteredInEd)){
                 searchedArrayList.add(stdModel);
             }
@@ -61,8 +55,7 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
     }
     private void searchByRollNumber(String rollNoEnteredInEd){
         ArrayList<StudentModel> searchedArrList=new ArrayList<>();
-        ArrayList<StudentModel> studentModelsArrList=new ArrayList<>(SingleTon.getSingleTon().getStudentModelArrayList());
-        for (StudentModel stdModel : studentModelsArrList){
+        for (StudentModel stdModel :this.studentArrTemp){
             if (String.valueOf(stdModel.getStudentRollNumber()).contains(rollNoEnteredInEd)){
                 searchedArrList.add(stdModel);
             }
@@ -71,8 +64,7 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
     }
     private void searchByContactNumber(String contactNumberEnteredInEd){
         ArrayList<StudentModel> searchedArrList=new ArrayList<>();
-        ArrayList<StudentModel> studentModelsArrList=new ArrayList<>(SingleTon.getSingleTon().getStudentModelArrayList());
-        for (StudentModel stdModel : studentModelsArrList){
+        for (StudentModel stdModel :this.studentArrTemp){
             if (stdModel.getStudentContactNumber().contains(contactNumberEnteredInEd)){
                 searchedArrList.add(stdModel);
             }
@@ -80,6 +72,14 @@ public class SearchStdEdTextChangeListener implements TextWatcher {
         SingleTon.getSingleTon().setStudentModelArrayList(searchedArrList);
     }
     private void setAllStudents(){
-        SingleTon.getSingleTon().setStudentModelArrayList(SingleTon.getSingleTon().getHomeMain().homeStudentsDb.getAllStudentsData());
+        SingleTon.getSingleTon().setStudentModelArrayList(this.studentArrTemp);
+    }
+
+    public ArrayList<StudentModel> getStudentArrTemp() {
+        return studentArrTemp;
+    }
+
+    public void setStudentArrTemp(ArrayList<StudentModel> studentArrTemp) {
+        this.studentArrTemp = studentArrTemp;
     }
 }

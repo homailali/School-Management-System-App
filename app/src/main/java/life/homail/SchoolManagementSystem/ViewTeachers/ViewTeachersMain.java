@@ -26,9 +26,9 @@ public class ViewTeachersMain extends AppCompatActivity{
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         super.onBackPressed();
-        SingleTon.getSingleTon().setTeacherModelArrayList(SingleTon.getSingleTon().getHomeMain().homeTeachersDb.getAllTeachers());
+        SingleTon.getSingleTon().setTeacherModelArrayList(this.teacherSearchEdTextChangedListener.getTeacherArrTemp());
     }
 
 
@@ -36,6 +36,7 @@ public class ViewTeachersMain extends AppCompatActivity{
         this.createSomeObjects();
         this.rcViewSettings();
         this.setNoTeacherTvVisibility("No teacher added");
+        this.teacherSearchEdTextChangedListener.setTeacherArrTemp(SingleTon.getSingleTon().getTeacherModelArrayList());
     }
 
 

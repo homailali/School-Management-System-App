@@ -37,7 +37,6 @@ public class SearchByBtnHandler implements View.OnClickListener{
     private void setUpDialog(){
         this.searchByDialog=new Dialog(this.viewStudentMain);
         this.searchByDialog.setContentView(R.layout.view_std_search_by_dialog);
-        this.searchByDialog.setCancelable(false);
         this.initializeViews();
         this.setEventHandlersForDialogViews();
     }

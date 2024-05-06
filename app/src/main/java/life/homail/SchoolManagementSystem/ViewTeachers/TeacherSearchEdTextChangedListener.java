@@ -6,6 +6,7 @@ import life.homail.SchoolManagementSystem.ModelClasses.TeacherModel;
 import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
 public class TeacherSearchEdTextChangedListener implements TextWatcher {
     private ViewTeachersMain viewTeachersMain;
+    private ArrayList<TeacherModel> teacherArrTemp;
     protected TeacherSearchEdTextChangedListener(ViewTeachersMain viewTeachersMain) {
 
         this.viewTeachersMain = viewTeachersMain;
@@ -20,9 +21,7 @@ public class TeacherSearchEdTextChangedListener implements TextWatcher {
         this.setAllStudents();
         if (!editableStr.isBlank()) this.searchBasedOnSelectedOption(editableStr);
         this.viewTeachersMain.setNoTeacherTvVisibility("No teacher founded");
-        try {
-            this.viewTeachersMain.viewTeachersAdapter.notifyItemRangeChanged(0, SingleTon.getSingleTon().getTeacherModelArrayList().size());
-        } catch (Exception ignored){}
+        this.viewTeachersMain.viewTeachersAdapter.notifyDataSetChanged();
     }
     private void searchBasedOnSelectedOption(String editableStr){
         switch (this.viewTeachersMain.currentSearchSelectedOption){
@@ -34,8 +33,7 @@ public class TeacherSearchEdTextChangedListener implements TextWatcher {
     }
     private void searchById(String editableStr){
         ArrayList<TeacherModel> searchedArrList=new ArrayList<>();
-        ArrayList<TeacherModel> teacherModelArrayList=new ArrayList<>(SingleTon.getSingleTon().getTeacherModelArrayList());
-        for (TeacherModel teacherModel : teacherModelArrayList){
+        for (TeacherModel teacherModel : this.teacherArrTemp){
             if (String.valueOf(teacherModel.getTeacherId()).contains(editableStr)){
                 searchedArrList.add(teacherModel);
             }
@@ -45,8 +43,7 @@ public class TeacherSearchEdTextChangedListener implements TextWatcher {
     private void searchByName(String editableStr){
         editableStr=editableStr.toLowerCase();
         ArrayList<TeacherModel> searchedArrList=new ArrayList<>();
-        ArrayList<TeacherModel> teacherModelArrayList=new ArrayList<>(SingleTon.getSingleTon().getTeacherModelArrayList());
-        for (TeacherModel teacherModel : teacherModelArrayList){
+        for (TeacherModel teacherModel : this.teacherArrTemp){
              if (teacherModel.getTeacherFullName().toLowerCase().contains(editableStr)){
                  searchedArrList.add(teacherModel);
              }
@@ -56,8 +53,7 @@ public class TeacherSearchEdTextChangedListener implements TextWatcher {
     private void searchBySubject(String editableStr){
         editableStr=editableStr.toLowerCase();
         ArrayList<TeacherModel> searchedArrList=new ArrayList<>();
-        ArrayList<TeacherModel> teacherModelArrayList=new ArrayList<>(SingleTon.getSingleTon().getTeacherModelArrayList());
-        for (TeacherModel teacherModel : teacherModelArrayList){
+        for (TeacherModel teacherModel : this.teacherArrTemp){
             if (teacherModel.getTeacherSubject().toLowerCase().contains(editableStr)){
                 searchedArrList.add(teacherModel);
             }
@@ -66,8 +62,7 @@ public class TeacherSearchEdTextChangedListener implements TextWatcher {
     }
     private void searchByPhoneNumber(String editableStr){
         ArrayList<TeacherModel> searchedArrList=new ArrayList<>();
-        ArrayList<TeacherModel> teacherModelArrayList=new ArrayList<>(SingleTon.getSingleTon().getTeacherModelArrayList());
-        for (TeacherModel teacherModel : teacherModelArrayList){
+        for (TeacherModel teacherModel : this.teacherArrTemp){
             if (teacherModel.getTeacherPhoneNumber().contains(editableStr)){
                 searchedArrList.add(teacherModel);
             }
@@ -76,6 +71,14 @@ public class TeacherSearchEdTextChangedListener implements TextWatcher {
     }
 
     private void setAllStudents(){
-        SingleTon.getSingleTon().setTeacherModelArrayList(SingleTon.getSingleTon().getHomeMain().homeTeachersDb.getAllTeachers());
+        SingleTon.getSingleTon().setTeacherModelArrayList(this.teacherArrTemp);
+    }
+
+    public ArrayList<TeacherModel> getTeacherArrTemp() {
+        return teacherArrTemp;
+    }
+
+    public void setTeacherArrTemp(ArrayList<TeacherModel> teacherArrTemp) {
+        this.teacherArrTemp = teacherArrTemp;
     }
 }

@@ -24,12 +24,13 @@ public class ViewStudentMain extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         super.onBackPressed();
-        SingleTon.getSingleTon().setStudentModelArrayList(SingleTon.getSingleTon().getHomeMain().homeStudentsDb.getAllStudentsData());
+        SingleTon.getSingleTon().setStudentModelArrayList(this.searchStdEdTextChangeListener.getStudentArrTemp());
     }
     private void atEndOfOnCreate(){
         this.createSomeObjects();
         this.rcViewAndAdapterSettings();
         this.setNoStdTvVisibility("No students added");
+        this.searchStdEdTextChangeListener.setStudentArrTemp(SingleTon.getSingleTon().getStudentModelArrayList());
     }
     protected void setNoStdTvVisibility(String tvText){
         this.viewStudentMainViews.noStudentsTv.setText(tvText);

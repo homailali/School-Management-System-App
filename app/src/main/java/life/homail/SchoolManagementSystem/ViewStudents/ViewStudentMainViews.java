@@ -33,8 +33,6 @@ public class ViewStudentMainViews {
     private void setEventHandlers(){
         this.searchByBtn.setOnClickListener(this.viewStudentMain.searchByBtnHandler);
         this.searchStdEd.addTextChangedListener(this.viewStudentMain.searchStdEdTextChangeListener);
-        this.goBackBtn.setOnClickListener(e->{
-            this.viewStudentMain.onBackPressed();
-        });
+        this.goBackBtn.setOnClickListener(e-> this.viewStudentMain.onBackPressed());
     }
 }

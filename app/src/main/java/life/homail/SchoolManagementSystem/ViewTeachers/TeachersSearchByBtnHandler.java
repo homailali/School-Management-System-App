@@ -35,7 +35,6 @@ public class TeachersSearchByBtnHandler {
     private void initialSettings(){
         this.teacherSearchByDialog=new Dialog(this.viewTeachersMain);
         this.teacherSearchByDialog.setContentView(R.layout.view_teacher_search_by_dialog);
-        this.teacherSearchByDialog.setCancelable(false);
     }
     private void initializeViews(){
         this.teacherSearchByIdBtn=this.teacherSearchByDialog.findViewById(R.id.searchByIdBtn);
