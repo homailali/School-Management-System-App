@@ -4,6 +4,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
+import java.util.Collections;
+
 import life.homail.SchoolManagementSystem.ModelClasses.StudentModel;
 import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
 
@@ -94,5 +96,27 @@ public class HomeStudentsDb extends SQLiteOpenHelper{
         int temp=sqLiteDatabase.update(TABLE_NAME,contentValues,ROLL_NO_COL+"=?",new String[]{String.valueOf(oldModel.getStudentRollNumber())});
         sqLiteDatabase.close();
         return temp!=0;
+    }
+    public ArrayList<StudentModel> getLastFiveStudents(){
+        ArrayList<StudentModel> returnList=new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase=super.getWritableDatabase();
+        String[] columns={ROLL_NO_COL,FULL_NAME,FIRST_NAME_COL,LAST_NAME_COL,CLASS_NAME_COL,CONTACT_NUMBER_COL};
+        Cursor cursor=sqLiteDatabase.query(TABLE_NAME,columns,null,null,null,null,ROLL_NO_COL+" DESC","6");
+        if (cursor.moveToFirst()){
+            do {
+                int rollNo=cursor.getInt(0);
+                String fullName=cursor.getString(1);
+                String firstName=cursor.getString(2);
+                String lastName=cursor.getString(3);
+                String className=cursor.getString(4);
+                String contactNumber=cursor.getString(5);
+                StudentModel studentModel=new StudentModel(rollNo,fullName,firstName,lastName,className,contactNumber);
+                returnList.add(studentModel);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        sqLiteDatabase.close();
+        Collections.reverse(returnList);
+        return returnList;
     }
 }

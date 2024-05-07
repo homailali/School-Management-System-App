@@ -1,5 +1,6 @@
 package life.homail.SchoolManagementSystem.ViewStudents;
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -7,6 +8,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import life.homail.SchoolManagementSystem.R;
+import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
 
 public class ViewStudentMainViews {
     private ViewStudentMain viewStudentMain;
@@ -35,4 +37,6 @@ public class ViewStudentMainViews {
         this.searchStdEd.addTextChangedListener(this.viewStudentMain.searchStdEdTextChangeListener);
         this.goBackBtn.setOnClickListener(e-> this.viewStudentMain.onBackPressed());
     }
+
+
 }

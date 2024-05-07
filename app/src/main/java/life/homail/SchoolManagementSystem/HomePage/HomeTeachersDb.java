@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import life.homail.SchoolManagementSystem.ModelClasses.TeacherModel;
 
@@ -64,7 +65,7 @@ public class HomeTeachersDb extends SQLiteOpenHelper {
         Cursor cursor=sqLiteDatabase.rawQuery("select * from "+TABLE_NAME,null);
         if (cursor.moveToFirst()){
             do {
-                long teacherId=cursor.getLong(0);
+                long teacherId=cursor.getInt(0);
                 String teacherFullName=cursor.getString(1);
                 String teacherFirstName=cursor.getString(2);
                 String teacherLastName=cursor.getString(3);
@@ -96,5 +97,27 @@ public class HomeTeachersDb extends SQLiteOpenHelper {
         long temp=sqLiteDatabase.update(TABLE_NAME,contentValues,TEACHER_ID_COLUMN+"=?",new String[]{String.valueOf(oldModel.getTeacherId())});
         sqLiteDatabase.close();
         return temp!=0;
+    }
+    public ArrayList<TeacherModel> getLastFiveTeachers(){
+        ArrayList<TeacherModel> returnList=new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase=super.getReadableDatabase();
+        String[] columns= {TEACHER_ID_COLUMN,TEACHER_FULL_NAME_COLUMN,TEACHER_FIRST_NAME_COLUMN,TEACHER_LAST_NAME_COLUMN,TEACHER_SUBJECT_COLUMN,TEACHER_PHONE_NUMBER_COLUMN};
+        Cursor cursor=sqLiteDatabase.query(TABLE_NAME,columns,null,null,null,null,TEACHER_ID_COLUMN+" DESC","6");
+        if (cursor.moveToFirst()){
+            do {
+                long teacherId=cursor.getInt(0);
+                String fullName=cursor.getString(1);
+                String firstName=cursor.getString(2);
+                String lastName=cursor.getString(3);
+                String teacherSubject=cursor.getString(4);
+                String teacherNumber=cursor.getString(5);
+                TeacherModel teacherModel=new TeacherModel(teacherId,fullName,firstName,lastName,teacherSubject,teacherNumber);
+                returnList.add(teacherModel);
+            } while(cursor.moveToNext());
+        }
+        cursor.close();
+        sqLiteDatabase.close();
+        Collections.reverse(returnList);
+        return returnList;
     }
 }

@@ -1,4 +1,5 @@
 package life.homail.SchoolManagementSystem.ViewTeachers;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,11 +29,11 @@ public class ViewTeachersAdapter extends RecyclerView.Adapter<TeachersMyViewHold
         teachersMyViewHolder.getViewTeachersSubjectTv().setText(SingleTon.getSingleTon().getTeacherModelArrayList().get(position).getTeacherSubject());
         teachersMyViewHolder.getViewTeachersPhoneNumberTv().setText(SingleTon.getSingleTon().getTeacherModelArrayList().get(position).getTeacherPhoneNumber());
     }
-
     private void setEventHandlersForBtn(TeachersMyViewHolder teachersMyViewHolder,int position){
         teachersMyViewHolder.getViewTeachersEditBtn().setOnClickListener(e->this.viewTeachersMain.viewTeacherEditBtnHandler.teacherEditBtnHandlerMain(position));
         teachersMyViewHolder.getViewTeachersDeleteBtn().setOnClickListener(e->this.viewTeachersMain.viewTeacherDeleteBtnHandler.teacherDeleteBtnHandlerMain(position));
     }
+
     @Override
     public int getItemCount(){
 

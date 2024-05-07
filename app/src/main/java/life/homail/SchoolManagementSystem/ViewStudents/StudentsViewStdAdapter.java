@@ -29,6 +29,8 @@ public class StudentsViewStdAdapter extends RecyclerView.Adapter<StudentsMyViewH
         studentsMyViewHolder.getContactNumberTv().setText(SingleTon.getSingleTon().getStudentModelArrayList().get(position).getStudentContactNumber());
     }
 
+
+
     private void setEventHandlersForBtn(StudentsMyViewHolder studentsMyViewHolder,int position){
         studentsMyViewHolder.getEditBtn().setOnClickListener(e->this.viewStudentMain.viewStdEditBtnHandler.viewStdEditBtnHandlerMain(position));
         studentsMyViewHolder.getDeleteBtn().setOnClickListener(e->this.viewStudentMain.viewStdDeleteBtnHandler.viewStdDeleteBtnHandlerMain(position));
@@ -38,35 +40,4 @@ public class StudentsViewStdAdapter extends RecyclerView.Adapter<StudentsMyViewH
 
         return SingleTon.getSingleTon().getStudentModelArrayList().size();
     }
-
-
-
-
-//    private void setLayoutsHeight(StudentsMyViewHolder studentsMyViewHolder){
-//        // Add an OnPreDrawListener to ensure accurate height measurements
-//        studentsMyViewHolder.itemView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-//            @Override
-//            public boolean onPreDraw() {
-//                studentsMyViewHolder.itemView.getViewTreeObserver().removeOnPreDrawListener(this);
-//                getAndSetValueOfLayoutsHeight(studentsMyViewHolder);
-//                return true;
-//            }
-//        });
-//    }
-//    protected void getAndSetValueOfLayoutsHeight(StudentsMyViewHolder studentsMyViewHolder) {
-//        int maxHeight;
-//        int nameLayoutHeight = studentsMyViewHolder.getNameConstraintLayout().getHeight();
-//        int rollNoLayoutHeight = studentsMyViewHolder.getRollNoConstraintLayout().getHeight();
-//        int classLayoutHeight = studentsMyViewHolder.getClassConstraintLayout().getHeight();
-//        int contactNumberLayoutHeight = studentsMyViewHolder.getContactNumberConstraintLayout().getHeight();
-//        maxHeight = Math.max(Math.max(nameLayoutHeight, rollNoLayoutHeight), Math.max(classLayoutHeight, contactNumberLayoutHeight));
-//
-//        studentsMyViewHolder.getNameConstraintLayout().setMinHeight(maxHeight);
-//        studentsMyViewHolder.getRollNoConstraintLayout().setMinHeight(maxHeight);
-//        studentsMyViewHolder.getClassConstraintLayout().setMinHeight(maxHeight);
-//        studentsMyViewHolder.getContactNumberConstraintLayout().setMinHeight(maxHeight);
-//    }
-
-
-
 }

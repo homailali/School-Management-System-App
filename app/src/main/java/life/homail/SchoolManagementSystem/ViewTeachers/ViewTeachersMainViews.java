@@ -1,4 +1,6 @@
 package life.homail.SchoolManagementSystem.ViewTeachers;
+import android.opengl.Visibility;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -6,6 +8,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import life.homail.SchoolManagementSystem.R;
+import life.homail.SchoolManagementSystem.SingleTon.SingleTon;
+
 public class ViewTeachersMainViews {
     protected TextView noTeacherTv;
     protected RecyclerView viewTeacherRcView;
@@ -30,4 +34,5 @@ public class ViewTeachersMainViews {
         this.viewTeachersSearchByBtn.setOnClickListener(e-> this.viewTeachersMain.teachersSearchByBtnHandler.onSearchByBtnClick());
         this.viewTeacherSearchEd.addTextChangedListener(this.viewTeachersMain.teacherSearchEdTextChangedListener);
     }
+
 }
